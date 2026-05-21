@@ -8,25 +8,19 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #1a1a24;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.14);
-    --text: #f0f0f5;
-    --muted: #8888a0;
-    --accent: #7c6fea;
-    --accent2: #a08af5;
-    --teal: #2dd4bf;
-    --green: #4ade80;
-    --amber: #fbbf24;
+    --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24;
+    --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+    --text: #f0f0f5; --muted: #8888a0;
+    --accent: #7c6fea; --accent2: #a08af5;
+    --teal: #2dd4bf; --green: #4ade80; --amber: #fbbf24;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  /* NAV */
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,10,15,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
+  .nav-logo { font-size: 15px; font-weight: 600; letter-spacing: -0.3px; }
   .nav-logo span { color: var(--accent2); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
@@ -34,87 +28,107 @@
   .nav-cta { font-size: 13px; font-weight: 500; background: var(--accent); color: #fff; padding: 7px 16px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; }
   .nav-cta:hover { opacity: 0.85; }
 
+  /* LAYOUT */
   section { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.5rem; }
-  .section-title { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); margin-bottom: 0.75rem; }
-  .section-sub { font-size: 16px; color: var(--muted); max-width: 560px; }
+  .section-title { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.75rem; }
+  .section-sub { font-size: 16px; color: var(--muted); max-width: 580px; }
+  .glow-line { height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); max-width: 1000px; margin: 0 auto; opacity: 0.35; }
 
+  /* HERO */
   #hero { padding-top: 8rem; padding-bottom: 5rem; }
   .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(124,111,234,0.12); border: 1px solid rgba(124,111,234,0.25); color: var(--accent2); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; margin-bottom: 1.5rem; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .hero-name { font-size: clamp(36px, 6vw, 60px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 1rem; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+  .hero-name { font-size: clamp(36px,6vw,60px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 1rem; }
   .hero-name span { background: linear-gradient(135deg, var(--accent2), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero-role { font-size: 18px; color: var(--muted); margin-bottom: 1.5rem; }
-  .hero-bio { font-size: 16px; color: #c0c0d8; max-width: 600px; line-height: 1.75; margin-bottom: 2rem; }
+  .hero-role { font-size: 17px; color: var(--muted); margin-bottom: 1.25rem; }
+  .hero-location { font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+  .hero-bio { font-size: 15px; color: #c0c0d8; max-width: 620px; line-height: 1.8; margin-bottom: 2rem; }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary { background: var(--accent); color: #fff; padding: 11px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.2s; }
   .btn-primary:hover { opacity: 0.85; }
-  .btn-secondary { background: transparent; color: var(--text); padding: 11px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; border: 1px solid var(--border2); transition: border-color 0.2s; }
+  .btn-secondary { background: transparent; color: var(--text); padding: 11px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; border: 1px solid var(--border2); transition: border-color 0.2s; display: flex; align-items: center; gap: 8px; }
   .btn-secondary:hover { border-color: var(--accent); }
+  .btn-secondary svg { width: 15px; height: 15px; }
   .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
-  .stat-val { font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+  .stat-val { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
   .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat-highlight { color: var(--teal); }
 
-  .glow-line { height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); max-width: 1000px; margin: 0 auto; opacity: 0.4; }
-
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
   .about-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
-  .about-card h3 { font-size: 13px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
-  .focus-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border2); color: var(--muted); }
+  .about-card h3 { font-size: 12px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+  .focus-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag { font-size: 12px; font-weight: 500; padding: 4px 11px; border-radius: 20px; border: 1px solid var(--border2); color: var(--muted); }
   .tag.accent { background: rgba(124,111,234,0.1); border-color: rgba(124,111,234,0.3); color: var(--accent2); }
-  .about-text { font-size: 15px; color: #b0b0c8; line-height: 1.75; }
+  .tag.teal { background: rgba(45,212,191,0.08); border-color: rgba(45,212,191,0.25); color: var(--teal); }
+  .about-text { font-size: 14px; color: #b0b0c8; line-height: 1.8; }
 
+  /* EXPERIENCE */
   .timeline { margin-top: 2.5rem; position: relative; }
   .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border); }
   .tl-item { padding-left: 2rem; position: relative; margin-bottom: 2.5rem; }
   .tl-dot { position: absolute; left: -5px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
   .tl-dot.teal { background: var(--teal); }
+  .tl-dot.muted { background: var(--muted); }
   .tl-meta { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-  .tl-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .tl-company { font-size: 14px; color: var(--accent2); margin-bottom: 8px; }
-  .tl-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
-  .tl-desc li { margin-bottom: 4px; }
+  .tl-title { font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+  .tl-company { font-size: 13px; color: var(--accent2); margin-bottom: 10px; }
+  .tl-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .tl-desc li { margin-bottom: 5px; list-style: none; padding-left: 1rem; position: relative; }
+  .tl-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+  .tl-results { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .result-pill { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(45,212,191,0.08); border: 1px solid rgba(45,212,191,0.2); color: var(--teal); }
 
-  #casestudy { padding-top: 5rem; }
-  .cs-hero { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; margin-top: 2rem; }
+  /* CASE STUDY */
+  .cs-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; margin-top: 2rem; }
   .cs-badge { display: inline-block; background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); color: var(--green); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; }
-  .cs-title { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-  .cs-client { font-size: 14px; color: var(--muted); margin-bottom: 2rem; }
-  .metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .cs-title { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.4rem; }
+  .cs-client { font-size: 13px; color: var(--muted); margin-bottom: 2rem; }
+  .metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2rem; }
   .metric-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; text-align: center; }
-  .metric-val { font-size: 28px; font-weight: 700; color: var(--teal); letter-spacing: -0.5px; }
+  .metric-val { font-size: 24px; font-weight: 700; color: var(--teal); letter-spacing: -0.5px; }
   .metric-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .metric-change { font-size: 11px; font-weight: 600; color: var(--green); margin-top: 2px; }
-  .cs-section { margin-bottom: 2rem; }
-  .cs-section h3 { font-size: 14px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-  .cs-section p, .cs-section li { font-size: 14px; color: #b0b0c8; line-height: 1.75; }
+  .metric-change { font-size: 11px; font-weight: 600; color: var(--green); margin-top: 3px; }
+  .cs-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .cs-tab { font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 6px; border: 1px solid var(--border2); color: var(--muted); cursor: pointer; background: transparent; transition: all 0.2s; }
+  .cs-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .cs-panel { display: none; }
+  .cs-panel.active { display: block; }
+  .cs-section { margin-bottom: 1.75rem; }
+  .cs-section h3 { font-size: 12px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .cs-section p, .cs-section li { font-size: 14px; color: #b0b0c8; line-height: 1.8; }
   .cs-section ul { padding-left: 1.25rem; }
-  .cs-section li { margin-bottom: 4px; }
+  .cs-section li { margin-bottom: 5px; }
   .pareto-bar { margin-bottom: 10px; }
   .pareto-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-  .pareto-track { background: var(--bg3); border-radius: 4px; height: 8px; overflow: hidden; }
+  .pareto-track { background: var(--bg3); border-radius: 4px; height: 7px; overflow: hidden; }
   .pareto-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--teal)); }
-  .quote-block { background: rgba(45,212,191,0.06); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
-  .quote-block p { font-size: 14px; color: #c0c0d8; line-height: 1.75; font-style: italic; }
+  .pareto-fill.dim { background: linear-gradient(90deg,#444,#666); }
+  .quote-block { background: rgba(45,212,191,0.05); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .quote-block p { font-size: 14px; color: #c0c0d8; line-height: 1.8; font-style: italic; }
   .quote-block cite { font-size: 12px; color: var(--muted); margin-top: 8px; display: block; font-style: normal; font-weight: 500; }
-  .cs-linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--accent2); text-decoration: none; border: 1px solid rgba(124,111,234,0.3); padding: 7px 14px; border-radius: 6px; margin-top: 1rem; transition: background 0.2s; }
-  .cs-linkedin:hover { background: rgba(124,111,234,0.08); }
+  .cs-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--accent2); text-decoration: none; border: 1px solid rgba(124,111,234,0.3); padding: 7px 14px; border-radius: 6px; margin-top: 1rem; transition: background 0.2s; }
+  .cs-link:hover { background: rgba(124,111,234,0.08); }
 
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1rem; margin-top: 2rem; }
   .skill-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
   .skill-card h3 { font-size: 12px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-  .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skill-pill { font-size: 12px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); padding: 4px 10px; border-radius: 5px; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sp { font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); padding: 3px 9px; border-radius: 4px; }
 
-  .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
-  .cert-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 12px; }
-  .cert-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .cert-name { font-size: 14px; font-weight: 500; color: var(--text); }
+  /* CERTS */
+  .cert-list { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1rem; margin-top: 2rem; }
+  .cert-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; display: flex; gap: 12px; align-items: flex-start; }
+  .cert-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .cert-name { font-size: 14px; font-weight: 500; }
   .cert-issuer { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .cert-id { font-size: 11px; color: var(--accent2); margin-top: 4px; font-family: monospace; }
 
+  /* CONTACT */
   #contact { text-align: center; }
   .contact-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 3rem 2rem; margin-top: 2rem; }
   .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
@@ -124,7 +138,7 @@
 
   footer { border-top: 1px solid var(--border); text-align: center; padding: 2rem; font-size: 13px; color: var(--muted); }
 
-  @media (max-width: 640px) {
+  @media(max-width:640px) {
     .about-grid, .metrics-row { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .hero-stats { gap: 1.5rem; }
@@ -140,241 +154,415 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#casestudy">Case Study</a></li>
+      <li><a href="#aiwork">AI Work</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#looking">Looking For</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="mailto:Ktej0313@gmail.com" class="nav-cta">Let's connect</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-badge">🟢 Open to Senior PM roles</div>
+  <div class="hero-badge">🟢 Open to Senior PM roles · Bangalore / Remote</div>
   <h1 class="hero-name">Bharath Tej<br><span>Kaleru</span></h1>
-  <p class="hero-role">Product Manager · Patternlab.ai · Hyderabad</p>
-  <p class="hero-bio">I started hands-on with hardware — IoT systems and industrial automation — before moving into product. That technical grounding shapes how I think: I ask the "why" behind every user problem and the "how" behind every build decision.</p>
+  <p class="hero-role">Product Manager · AI-First · B2B SaaS</p>
+  <p style="font-size:17px; color:#c0c0d8; max-width:620px; line-height:1.7; margin-bottom:0.5rem; font-style:italic;">"I build B2B SaaS products that give operations teams full visibility into their data — backed by a proven ₹2.8Cr/quarter in verified client revenue recovery."</p>
+  <p class="hero-location">📍 Hyderabad &nbsp;·&nbsp; Open to Bangalore / Remote</p>
+  <p class="hero-bio">PM with 3+ years delivering B2B SaaS products end-to-end — combining product depth with project execution. I ask the "why" behind every user problem and the "how" behind every build decision. Technical foundation in ECE + IoT gives me an unusually sharp instinct for how systems actually work.</p>
   <div class="hero-ctas">
     <a href="#casestudy" class="btn-primary">View case study</a>
-    <a href="#contact" class="btn-secondary">Get in touch</a>
+    <a href="#contact" class="btn-secondary">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 0 0 .18 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Get in touch
+    </a>
+    <a href="https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ" target="_blank" class="btn-secondary">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Resume
+    </a>
   </div>
   <div class="hero-stats">
-    <div>
-      <div class="stat-val">3+</div>
-      <div class="stat-label">Years in product</div>
+    <div><div class="stat-val stat-highlight">₹2.8Cr</div><div class="stat-label">Revenue recovered / qtr</div></div>
+    <div><div class="stat-val stat-highlight">↓91%</div><div class="stat-label">Downtime reduced</div></div>
+    <div><div class="stat-val">3+</div><div class="stat-label">Years in product</div></div>
+    <div><div class="stat-val">0→1</div><div class="stat-label">Builder mindset</div></div>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Background</div>
+  <h2 class="section-title">Who I am</h2>
+  <p class="section-sub">AI-certified PM with roots in ECE and IoT — building data-informed, user-centric products across B2B SaaS.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Core competencies</h3>
+      <div class="focus-tags">
+        <span class="tag accent">AI Product Management</span>
+        <span class="tag accent">Generative AI</span>
+        <span class="tag accent">LLM Evals</span>
+        <span class="tag accent">0→1 Builder</span>
+        <span class="tag">PRD Writing</span>
+        <span class="tag">User Research</span>
+        <span class="tag">Roadmapping</span>
+        <span class="tag">Agile / Scrum</span>
+        <span class="tag">GTM</span>
+        <span class="tag">KPI Tracking</span>
+        <span class="tag">Stakeholder Mgmt</span>
+        <span class="tag">A/B Testing</span>
+      </div>
     </div>
-    <div>
-      <div class="stat-val">AI</div>
-      <div class="stat-label">Core domain</div>
+    <div class="about-card">
+      <h3>My story</h3>
+      <p class="about-text">I started hands-on with hardware — IoT testing and industrial automation at Nitro Network — before moving into product. At Patternlab.agents I've grown from APM to PM, owning the full product lifecycle on a B2B SaaS platform: discovery, PRDs, sprint execution, GTM, and post-launch KPI tracking. My ECE + IoT background makes me unusually effective at bridging technical and business conversations.</p>
     </div>
-    <div>
-      <div class="stat-val">B2C</div>
-      <div class="stat-label">Consumer focus</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">Jul 2023 – Present</div>
+      <div class="tl-title">Product Manager</div>
+      <div class="tl-company">Patternlab.agents · B2B SaaS · Hyderabad</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Owning end-to-end product lifecycle — discovery, PRD, sprint planning, GTM, and KPI tracking.</li>
+          <li>Shipped Bulk Data Assignment feature recovering ₹2.8 Cr/qtr in lost production revenue.</li>
+          <li>Redesigned Machine Timeline UX — saved 89.1 hrs/month in operator effort.</li>
+          <li>Led cross-functional teams across design, engineering, QA, and stakeholders.</li>
+        </ul>
+      </div>
+      <div class="tl-results">
+        <span class="result-pill">₹2.8 Cr/qtr recovered</span>
+        <span class="result-pill">↓91% downtime</span>
+        <span class="result-pill">89.1 hrs/month saved</span>
+        <span class="result-pill">OEE ↑25%</span>
+      </div>
     </div>
-    <div>
-      <div class="stat-val">0→1</div>
-      <div class="stat-label">Builder mindset</div>
+
+    <div class="tl-item">
+      <div class="tl-dot teal"></div>
+      <div class="tl-meta">Pre-2023</div>
+      <div class="tl-title">IoT Testing & Industrial Automation</div>
+      <div class="tl-company">Nitro Network · Internships → Full-time</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Progressed from Research Intern → IoT Tester → Full-time role.</li>
+          <li>Built deep understanding of hardware–software systems and quality processes.</li>
+          <li>Foundation that now informs how I think about system reliability and edge cases in product.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot muted"></div>
+      <div class="tl-meta">2019 – 2023</div>
+      <div class="tl-title">B.E. — Electronics & Communication Engineering</div>
+      <div class="tl-company">Vidya Jyothi Institute of Technology (VJIT) · CGPA 7.9</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="section-label">Featured work</div>
+  <h2 class="section-title">Case studies</h2>
+  <p class="section-sub">Two shipped features. Real outcomes. Verified by the client.</p>
+
+  <div class="cs-wrap">
+    <div class="cs-badge">✓ Featured on Patternlab.ai LinkedIn · Client verified</div>
+
+    <div class="cs-tabs">
+      <button class="cs-tab active" onclick="showTab('f1',this)">Feature 1 — Bulk Data Assignment</button>
+      <button class="cs-tab" onclick="showTab('f2',this)">Feature 2 — Timeline UX Redesign</button>
+    </div>
+
+    <!-- FEATURE 1 -->
+    <div class="cs-panel active" id="f1">
+      <div class="cs-title">Bulk Data Assignment</div>
+      <div class="cs-client">Godrej Jersey · FMCG / Dairy · Curd Packaging · 1 plant · 8 machines</div>
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-val">44%→85%</div>
+          <div class="metric-label">OEE improvement</div>
+          <div class="metric-change">↑ +41 pts · World-class</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">↓91%</div>
+          <div class="metric-label">Downtime reduced</div>
+          <div class="metric-change">3.35 → 0.38 hrs/day</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">₹2.8Cr</div>
+          <div class="metric-label">Saved per quarter</div>
+          <div class="metric-change">Verified · No new headcount</div>
+        </div>
+      </div>
+
+      <div class="cs-section">
+        <h3>The problem</h3>
+        <p>Godrej Jersey's curd packaging line ran at just 44% OEE — well below the 85% world-class benchmark. The team was missing demand targets daily, but had zero visibility into why. Through user research and customer journey mapping, I identified delayed downtime classification as the root cause — ₹2.8 Cr/qtr was bleeding out silently because "planned" downtimes weren't being tracked for overruns.</p>
+      </div>
+
+      <div class="cs-section">
+        <h3>Pareto analysis — top downtime causes</h3>
+        <div class="pareto-bar"><div class="pareto-label"><span>CIP overrun (Planned)</span><span>82%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:82%"></div></div></div>
+        <div class="pareto-bar"><div class="pareto-label"><span>Meal break overrun (Planned)</span><span>64%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:64%"></div></div></div>
+        <div class="pareto-bar"><div class="pareto-label"><span>Hot water process (Planned)</span><span>48%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:48%"></div></div></div>
+        <div class="pareto-bar"><div class="pareto-label"><span>Machine setup delays (Unplanned)</span><span>28%</span></div><div class="pareto-track"><div class="pareto-fill dim" style="width:28%"></div></div></div>
+        <div class="pareto-bar"><div class="pareto-label"><span>Other unplanned stops</span><span>18%</span></div><div class="pareto-track"><div class="pareto-fill dim" style="width:18%"></div></div></div>
+      </div>
+
+      <div class="cs-section">
+        <h3>What I did</h3>
+        <ul>
+          <li>Authored PRDs, user stories, and acceptance criteria using MoSCoW prioritisation</li>
+          <li>Led backlog grooming and sprint planning across Agile/Scrum cycles</li>
+          <li>Shipped bulk assignment, range-selection, and Select All across 8 machines</li>
+          <li>Applied RCA + risk mitigation for data integrity — shipped Merge & Unmerge with audit trail</li>
+          <li>Ran A/B testing and usability testing pre-launch; tracked OKRs and KPIs post-rollout</li>
+        </ul>
+      </div>
+
+      <div class="quote-block">
+        <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
+        <cite>— Amit Sharma, Operational Excellence Head, Godrej CDPL</cite>
+      </div>
+
+      <div class="tl-results" style="margin-top:0;">
+        <span class="result-pill">Revenue ₹2.8Cr/qtr</span>
+        <span class="result-pill">Downtime ↓88.7%</span>
+        <span class="result-pill">Entry effort ↓60%</span>
+        <span class="result-pill">OEE speed ↑25%</span>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <div style="font-size:12px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">Product prototypes</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem;">
+          <div style="background:var(--bg3); border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+            <div style="padding:10px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;">
+              <span style="font-size:12px; font-weight:500; color:var(--muted);">v1 — Initial version</span>
+              <a href="https://www.figma.com/proto/c0hW33rgBgkx2XxySSFUan/Power-IQ-EMS?node-id=1-2790&t=xI8cmKwpxXeLmzej-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3527" target="_blank" style="font-size:11px; color:var(--accent2); text-decoration:none;">Open ↗</a>
+            </div>
+            <div style="padding:14px; font-size:12px; color:var(--muted); line-height:1.6;">Early stage OEE dashboard — before user research and client feedback iterations.</div>
+          </div>
+          <div style="background:var(--bg3); border:1px solid rgba(124,111,234,0.3); border-radius:10px; overflow:hidden;">
+            <div style="padding:10px 14px; border-bottom:1px solid rgba(124,111,234,0.2); display:flex; align-items:center; justify-content:space-between;">
+              <span style="font-size:12px; font-weight:500; color:var(--accent2);">v2 — Latest · Phase 2</span>
+              <a href="https://www.figma.com/proto/zOYHkH2Y6PuCVuDlG3Kitl/Phase--2?page-id=0%3A1&node-id=1-9755&viewport=5905%2C1980%2C0.12&t=TBQLUeLXcXCicryW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4344%3A55085" target="_blank" style="font-size:11px; color:var(--accent2); text-decoration:none;">Open ↗</a>
+            </div>
+            <div style="padding:14px; font-size:12px; color:var(--muted); line-height:1.6;">Improved version after multiple client feedback rounds — inline forms, timeline redesign, bulk assignment.</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.notion.so/Bharath-Tej-Kaleru-Product-Manager-28252cde8518414d80e3822783596f8e" target="_blank" class="cs-link" style="margin-right:8px;">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.747 0-.934-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+        View full case study on Notion
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7396057308323045376" target="_blank" class="cs-link">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-5 6h-2.5v2h2v6h2.5v-6h2l.3-2h-2.3V8c0-.5.2-.8.8-.8h1.5V5h-2c-2 0-2.8 1-2.8 3v1z"/></svg>
+        View official Patternlab.ai post
+      </a>
+    </div>
+
+    <!-- FEATURE 2 -->
+    <div class="cs-panel" id="f2">
+      <div class="cs-title">Machine Timeline UX Redesign</div>
+      <div class="cs-client">Patternlab.agents · Internal platform · Production floor operators</div>
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-val">89.1 hrs</div>
+          <div class="metric-label">Saved per month</div>
+          <div class="metric-change">Operator time recovered</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">↓45%</div>
+          <div class="metric-label">Data entry time</div>
+          <div class="metric-change">Per shift per operator</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">↑30%</div>
+          <div class="metric-label">Data completeness</div>
+          <div class="metric-change">1.5 hrs/day saved per supervisor</div>
+        </div>
+      </div>
+
+      <div class="cs-section">
+        <h3>The problem</h3>
+        <p>Product analytics and user interviews revealed that fragmented popup UX was creating data gaps across the production timeline — masking ₹2.8 Cr/qtr in recoverable revenue. Operators had to navigate multiple disconnected popups to log downtime, splits, and records — causing errors, delays, and incomplete data.</p>
+      </div>
+
+      <div class="cs-section">
+        <h3>What I did</h3>
+        <ul>
+          <li>Defined product vision and led wireframing and prototyping in Figma</li>
+          <li>Replaced all popups with inline forms — production entry, downtime splitting, and record merging from one uninterrupted timeline view</li>
+          <li>Owned GTM and change management — rollout phasing, operator training, stakeholder demos</li>
+          <li>Implemented dependency management and risk mitigation for shift-handover edge cases</li>
+          <li>Eliminated ~80% of QA-flagged errors post-launch</li>
+        </ul>
+      </div>
+
+      <div class="cs-section">
+        <h3>What I'd do differently</h3>
+        <ul>
+          <li>Involve floor operators earlier in the discovery phase — their input would have cut research time significantly</li>
+          <li>Lock in downtime classifications on day one to avoid mid-project reclassification</li>
+          <li>Quantify ₹ savings earlier to accelerate leadership buy-in</li>
+        </ul>
+      </div>
+
+      <div class="tl-results" style="margin-top:0;">
+        <span class="result-pill">89.1 hrs/month saved</span>
+        <span class="result-pill">Data completeness ↑30%</span>
+        <span class="result-pill">Entry time ↓45%</span>
+        <span class="result-pill">QA errors ↓80%</span>
+      </div>
+
+      <div class="quote-block" style="margin-top:1.5rem;">
+        <p>"Bharath identified the friction operators were facing with the popup-based downtime entry and brought it to the table with clear user feedback and a strong case for change. Working closely with our UI/UX team, running client testing, and iterating based on real feedback — the team shipped a much cleaner inline timeline experience. His ability to spot the problem, align the team, and drive it to production is exactly the kind of PM thinking we value."</p>
+        <cite>— COO, Patternlab.ai</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI WORK -->
+<section id="aiwork">
+  <div class="section-label">AI credibility</div>
+  <h2 class="section-title">AI work proof</h2>
+  <p class="section-sub">Not just listed on a resume — here's what I actually built, prompted, and evaluated using Claude / Anthropic.</p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-top:2rem;">
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:11px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.75rem;">Prompt Engineering</div>
+      <p style="font-size:14px; color:#b0b0c8; line-height:1.75; margin-bottom:1rem;">Designed and iterated prompts for three AI-generated output types — shift summary reports, downtime reason classification, and production performance narratives — using Claude (Anthropic) as the underlying LLM.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        <span class="sp">Claude / Anthropic</span>
+        <span class="sp">Prompt iteration</span>
+        <span class="sp">Output shaping</span>
+        <span class="sp">Context injection</span>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:11px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.75rem;">LLM Evals Design</div>
+      <p style="font-size:14px; color:#b0b0c8; line-height:1.75; margin-bottom:1rem;">Defined eval criteria to measure AI output accuracy — compared AI-generated reports against manually written ground truth by supervisors. Tracked accuracy rate across output types and iterated prompts based on failure patterns.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        <span class="sp">Ground truth comparison</span>
+        <span class="sp">Accuracy scoring</span>
+        <span class="sp">Failure analysis</span>
+        <span class="sp">Iterative improvement</span>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:11px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.75rem;">Before → After AI</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="background:var(--bg3); border-radius:8px; padding:10px 12px;">
+          <div style="font-size:11px; color:var(--muted); margin-bottom:4px;">Before</div>
+          <div style="font-size:13px; color:#b0b0c8; line-height:1.6;">Supervisors wrote shift reports manually. Downtime reasons were misclassified or missing. Data gaps were frequent and unflagged.</div>
+        </div>
+        <div style="background:rgba(45,212,191,0.06); border:1px solid rgba(45,212,191,0.2); border-radius:8px; padding:10px 12px;">
+          <div style="font-size:11px; color:var(--teal); margin-bottom:4px;">After</div>
+          <div style="font-size:13px; color:#b0b0c8; line-height:1.6;">AI auto-generated shift summaries, classified downtime reasons accurately, and flagged data gaps in real time — across all 8 machines per shift.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-top:1rem;">
+    <div style="font-size:11px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">My AI PM process</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem;">
+      <div style="text-align:center; padding:1rem; background:var(--bg3); border-radius:8px;">
+        <div style="font-size:20px; margin-bottom:6px;">🎯</div>
+        <div style="font-size:13px; font-weight:500; color:var(--text); margin-bottom:4px;">Define the task</div>
+        <div style="font-size:12px; color:var(--muted);">What should the AI output? What's the success criteria?</div>
+      </div>
+      <div style="text-align:center; padding:1rem; background:var(--bg3); border-radius:8px;">
+        <div style="font-size:20px; margin-bottom:6px;">✍️</div>
+        <div style="font-size:13px; font-weight:500; color:var(--text); margin-bottom:4px;">Write & iterate prompts</div>
+        <div style="font-size:12px; color:var(--muted);">Context, constraints, output format — tested across edge cases.</div>
+      </div>
+      <div style="text-align:center; padding:1rem; background:var(--bg3); border-radius:8px;">
+        <div style="font-size:20px; margin-bottom:6px;">🧪</div>
+        <div style="font-size:13px; font-weight:500; color:var(--text); margin-bottom:4px;">Eval against ground truth</div>
+        <div style="font-size:12px; color:var(--muted);">AI output vs manually written baseline. Score accuracy per output type.</div>
+      </div>
+      <div style="text-align:center; padding:1rem; background:var(--bg3); border-radius:8px;">
+        <div style="font-size:20px; margin-bottom:6px;">🔁</div>
+        <div style="font-size:13px; font-weight:500; color:var(--text); margin-bottom:4px;">Fix failure patterns</div>
+        <div style="font-size:12px; color:var(--muted);">Identify where AI fails, update prompt, re-eval until threshold met.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="glow-line"></div>
 
-<section id="about">
-  <div class="section-label">Background</div>
-  <h2 class="section-title">Who I am</h2>
-  <p class="section-sub">Background spanning IoT, B2C apps, and AI product development — with a strong engineering foundation from ECE.</p>
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>Focus areas</h3>
-      <div class="focus-tags">
-        <span class="tag accent">Consumer PM</span>
-        <span class="tag accent">AI / ML Products</span>
-        <span class="tag accent">0→1 Builder</span>
-        <span class="tag">User Research</span>
-        <span class="tag">Roadmapping</span>
-        <span class="tag">Data-informed</span>
-        <span class="tag">Cross-functional</span>
-      </div>
-    </div>
-    <div class="about-card">
-      <h3>My story</h3>
-      <p class="about-text">At Patternlab.ai, I've grown from APM to PM working on AI-driven consumer products. Before product, I spent time at Nitro Network — starting as a research intern, moving to IoT testing, then a full-time role. That ground-up path gives me an unusually strong instinct for how systems actually work.</p>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="section-label">Career</div>
-  <h2 class="section-title">Experience</h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta">2024 – Present</div>
-      <div class="tl-title">Product Manager</div>
-      <div class="tl-company">Patternlab.ai · Hyderabad</div>
-      <div class="tl-desc">
-        <ul>
-          <li>Leading product for AI-driven consumer features — from discovery through launch.</li>
-          <li>Owning the roadmap; partnering closely with design and engineering teams.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta">2023 – 2024</div>
-      <div class="tl-title">Associate Product Manager</div>
-      <div class="tl-company">Patternlab.ai · Hyderabad</div>
-      <div class="tl-desc">
-        <ul>
-          <li>Joined the core product team post-engineering.</li>
-          <li>Supported discovery, wrote specs, and shipped features on a fast-moving AI product.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot teal"></div>
-      <div class="tl-meta">Pre-2023</div>
-      <div class="tl-title">IoT Testing & Industrial Automation</div>
-      <div class="tl-company">Nitro Network · Full-time + Internships</div>
-      <div class="tl-desc">
-        <ul>
-          <li>Research intern → IoT tester intern → full-time role (structured progression).</li>
-          <li>Built deep understanding of hardware–software systems and quality processes.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" style="background: var(--muted)"></div>
-      <div class="tl-meta">2019 – 2023</div>
-      <div class="tl-title">B.Tech — Electronics & Communication Engineering</div>
-      <div class="tl-company">Vidya Jyothi Institute of Technology (VJIT) · CGPA 7.9</div>
-    </div>
-  </div>
-</section>
-
-<section id="casestudy">
-  <div class="section-label">Featured work</div>
-  <h2 class="section-title">Case study</h2>
-  <p class="section-sub">A real client engagement with measurable, validated outcomes.</p>
-  <div class="cs-hero">
-    <div class="cs-badge">✓ Featured on Patternlab.ai LinkedIn</div>
-    <div class="cs-title">OEE Improvement — Godrej Jersey</div>
-    <div class="cs-client">FMCG / Dairy · Curd Packaging Line · Ramantapur, Hyderabad · 1 plant · 8 machines</div>
-    <div class="metrics-row">
-      <div class="metric-card">
-        <div class="metric-val">44% → 85%</div>
-        <div class="metric-label">Overall Equipment Effectiveness</div>
-        <div class="metric-change">↑ +41 percentage points</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-val">↓ 91%</div>
-        <div class="metric-label">Unplanned downtime reduced</div>
-        <div class="metric-change">3.35 hrs → 0.38 hrs/day</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-val">₹2.8 Cr</div>
-        <div class="metric-label">Saved per quarter</div>
-        <div class="metric-change">Zero new machines or headcount</div>
-      </div>
-    </div>
-    <div class="cs-section">
-      <h3>The problem</h3>
-      <p>Godrej Jersey's curd packaging line was running at just 44% OEE — well below the 85% world-class benchmark. The team was consistently missing demand targets, but no one had visibility into <em>why</em>. 3.35 hours of production time were bleeding out every day, silently, because downtimes labelled "planned" weren't being tracked for overruns.</p>
-    </div>
-    <div class="cs-section">
-      <h3>Key insight</h3>
-      <p>The production manager assumed unplanned machine failures were the culprit. The data told a different story: planned downtimes — CIP cycles, meal breaks, hot water processes — were consistently overrunning their scheduled windows. Because they were labelled "planned," nobody flagged the overruns. That misclassification was costing ₹2.8 Cr every quarter.</p>
-    </div>
-    <div class="cs-section">
-      <h3>Pareto analysis — top downtime causes</h3>
-      <div class="pareto-bar">
-        <div class="pareto-label"><span>CIP overrun (Planned)</span><span>82%</span></div>
-        <div class="pareto-track"><div class="pareto-fill" style="width:82%"></div></div>
-      </div>
-      <div class="pareto-bar">
-        <div class="pareto-label"><span>Meal break overrun (Planned)</span><span>64%</span></div>
-        <div class="pareto-track"><div class="pareto-fill" style="width:64%"></div></div>
-      </div>
-      <div class="pareto-bar">
-        <div class="pareto-label"><span>Hot water process (Planned)</span><span>48%</span></div>
-        <div class="pareto-track"><div class="pareto-fill" style="width:48%"></div></div>
-      </div>
-      <div class="pareto-bar">
-        <div class="pareto-label"><span>Machine setup delays (Unplanned)</span><span>28%</span></div>
-        <div class="pareto-track"><div class="pareto-fill" style="width:28%; background: linear-gradient(90deg,#555,#777)"></div></div>
-      </div>
-      <div class="pareto-bar">
-        <div class="pareto-label"><span>Other unplanned stops</span><span>18%</span></div>
-        <div class="pareto-track"><div class="pareto-fill" style="width:18%; background: linear-gradient(90deg,#555,#777)"></div></div>
-      </div>
-      <p style="font-size:12px; color:var(--muted); margin-top:10px;">All top 3 causes were planned downtimes overrunning — not machine failures. Fixing planned overruns was the unlock.</p>
-    </div>
-    <div class="cs-section">
-      <h3>What I built</h3>
-      <p>A real-time RCA dashboard giving the production manager full visibility into exactly which downtime reason was responsible for delays — per machine, per shift. For the first time, the team could act on root cause rather than intuition.</p>
-    </div>
-    <div class="quote-block">
-      <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
-      <cite>— Amit Sharma, Operational Excellence Head, Godrej CDPL</cite>
-    </div>
-    <div class="cs-section">
-      <h3>What I'd do differently</h3>
-      <ul>
-        <li>Involve floor operators earlier — they knew the real reasons CIP ran long.</li>
-        <li>Lock in downtime classifications on day one to avoid reclassification mid-project.</li>
-        <li>Quantify ₹ savings upfront to accelerate leadership buy-in.</li>
-      </ul>
-    </div>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7396057308323045376" target="_blank" class="cs-linkedin">
-      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-5 6h-2.5v2h2v6h2.5v-6h2l.3-2h-2.3V8c0-.5.2-.8.8-.8h1.5V5h-2c-2 0-2.8 1-2.8 3v1z"/></svg>
-      View official Patternlab.ai post
-    </a>
-  </div>
-</section>
-
+<!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Toolkit</div>
   <h2 class="section-title">Skills & tools</h2>
   <div class="skills-grid">
     <div class="skill-card">
-      <h3>Design & Research</h3>
-      <div class="skill-list">
-        <span class="skill-pill">Figma</span>
-        <span class="skill-pill">Stitch</span>
-        <span class="skill-pill">User Research</span>
+      <h3>AI & ML</h3>
+      <div class="skill-pills">
+        <span class="sp">Generative AI</span><span class="sp">LLM Evals</span><span class="sp">Prompt Engineering</span><span class="sp">RAG</span><span class="sp">NLP</span><span class="sp">Hallucination Detection</span><span class="sp">ML Evaluation</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Product</h3>
+      <div class="skill-pills">
+        <span class="sp">PRD Writing</span><span class="sp">User Stories</span><span class="sp">Wireframing</span><span class="sp">Prototyping</span><span class="sp">A/B Testing</span><span class="sp">GTM</span><span class="sp">MoSCoW</span><span class="sp">Market Research</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Agile & Delivery</h3>
+      <div class="skill-pills">
+        <span class="sp">Agile / Scrum</span><span class="sp">Sprint Planning</span><span class="sp">Backlog Grooming</span><span class="sp">Kanban</span><span class="sp">OKRs</span><span class="sp">KPI Tracking</span><span class="sp">Velocity Tracking</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Tools</h3>
+      <div class="skill-pills">
+        <span class="sp">Figma</span><span class="sp">Jira</span><span class="sp">Confluence</span><span class="sp">Notion</span><span class="sp">Miro</span><span class="sp">Zoho Sprints</span><span class="sp">Productboard</span><span class="sp">SQL (Basic)</span>
       </div>
     </div>
     <div class="skill-card">
       <h3>Project Management</h3>
-      <div class="skill-list">
-        <span class="skill-pill">Zoho Sprints</span>
-        <span class="skill-pill">Zoho Projects</span>
-        <span class="skill-pill">Agile</span>
+      <div class="skill-pills">
+        <span class="sp">Risk Management</span><span class="sp">Change Management</span><span class="sp">Milestone Delivery</span><span class="sp">Stakeholder Mgmt</span><span class="sp">Scope Management</span><span class="sp">Resource Allocation</span>
       </div>
     </div>
     <div class="skill-card">
-      <h3>Product & Comms</h3>
-      <div class="skill-list">
-        <span class="skill-pill">Product Monkey</span>
-        <span class="skill-pill">LinkedIn</span>
-        <span class="skill-pill">Notion</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>Methods</h3>
-      <div class="skill-list">
-        <span class="skill-pill">Pareto Analysis</span>
-        <span class="skill-pill">RCA</span>
-        <span class="skill-pill">OEE Framework</span>
-        <span class="skill-pill">Roadmapping</span>
+      <h3>Analytics</h3>
+      <div class="skill-pills">
+        <span class="sp">Product Analytics</span><span class="sp">OEE Framework</span><span class="sp">RCA</span><span class="sp">Pareto Analysis</span><span class="sp">Churn Analysis</span><span class="sp">User Retention</span>
       </div>
     </div>
   </div>
+
   <div class="cert-list">
     <div class="cert-card">
       <div class="cert-icon">🎓</div>
       <div>
         <div class="cert-name">AI for Product Managers</div>
         <div class="cert-issuer">Alison · CPD Certified</div>
+        <div class="cert-id">LLM Evals · Generative AI · Prompt Engineering · RAG · NLP</div>
         <div class="cert-id">ID: 6727-57475976</div>
       </div>
     </div>
@@ -383,25 +571,64 @@
       <div>
         <div class="cert-name">Agile Project Management</div>
         <div class="cert-issuer">Alison · CPD Certified</div>
-        <div class="cert-id">ID: 6237-57474272</div>
+        <div class="cert-id">Agile · Scrum · Sprint Planning · Risk Management · Kanban</div>
+        <div class="cert-id">ID: 5661-57475976</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- WHAT I'M LOOKING FOR -->
+<section id="looking">
+  <div class="section-label">Next chapter</div>
+  <h2 class="section-title">What I'm looking for</h2>
+  <p class="section-sub">Helping the right team find me faster — here's exactly what I'm targeting.</p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:2rem;">
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:20px; margin-bottom:10px;">🏢</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Company stage</div>
+      <div style="font-size:14px; color:#b0b0c8; line-height:1.75;">Large company or enterprise — where product decisions have real scale and cross-functional complexity.</div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:20px; margin-bottom:10px;">🧠</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Domain</div>
+      <div style="font-size:14px; color:#b0b0c8; line-height:1.75;">Open across AI-first products, B2B SaaS, and consumer apps — wherever there's a hard problem to dig into.</div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:20px; margin-bottom:10px;">⚙️</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Role type</div>
+      <div style="font-size:14px; color:#b0b0c8; line-height:1.75;">Comfortable both building from scratch (0→1) and scaling existing products — I adapt to where the team needs the most leverage.</div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      <div style="font-size:20px; margin-bottom:10px;">🤝</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Team culture</div>
+      <div style="font-size:14px; color:#b0b0c8; line-height:1.75;">Strong engineering culture, data-driven decisions, and high ownership — teams that move fast and hold each other to a high bar.</div>
+    </div>
+
+  </div>
+
+  <div style="background:linear-gradient(135deg, rgba(124,111,234,0.08), rgba(45,212,191,0.06)); border:1px solid rgba(124,111,234,0.2); border-radius:12px; padding:1.5rem; margin-top:1rem;">
+    <p style="font-size:15px; color:#c0c0d8; line-height:1.8; margin:0;">I'm looking for a <strong style="color:var(--accent2)">Senior PM role</strong> at a <strong style="color:var(--accent2)">large company or enterprise</strong> where I can own meaningful product decisions across <strong style="color:var(--accent2)">AI, B2B SaaS, or consumer domains</strong> — working with strong engineers, backed by data, and moving fast. Based in Hyderabad, open to Bangalore and remote.</p>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Let's talk</div>
   <h2 class="section-title">Open to opportunities</h2>
-  <p class="section-sub">Looking for Senior PM roles in Consumer or AI-first products. Happy to chat.</p>
+  <p class="section-sub">Looking for Senior PM roles in Consumer or AI-first products. Based in Hyderabad, open to Bangalore and remote.</p>
   <div class="contact-card">
     <div class="contact-links">
-      <a href="mailto:Ktej0313@gmail.com" class="contact-link">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        Ktej0313@gmail.com
-      </a>
       <a href="https://linkedin.com/in/bharath-tej-76b26323b" target="_blank" class="contact-link">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-5 6h-2.5v2h2v6h2.5v-6h2l.3-2h-2.3V8c0-.5.2-.8.8-.8h1.5V5h-2c-2 0-2.8 1-2.8 3v1z"/></svg>
-        LinkedIn
+        Connect on LinkedIn
       </a>
       <a href="tel:+919121565048" class="contact-link">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 0 0 .18 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -415,5 +642,13 @@
   Built by Bharath Tej Kaleru · Product Manager · Hyderabad
 </footer>
 
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.cs-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.cs-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 </body>
 </html>
