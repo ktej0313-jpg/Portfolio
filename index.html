@@ -384,10 +384,10 @@
       <div class="cs-badge">✓ Client verified · Featured on Patternlab.ai LinkedIn</div>
       <div class="cs-title">OEE Improvement — Godrej Jersey</div>
       <div class="cs-client">FMCG / Dairy · Curd Packaging Line · Ramantapur, Hyderabad · 1 plant · 8 machines</div>
-      <div class="metrics-row">
-        <div class="metric-card"><div class="metric-val">44% → 85%</div><div class="metric-label">OEE improvement</div><div class="metric-change">↑ +41 pts · World-class benchmark</div></div>
-        <div class="metric-card"><div class="metric-val">↓ 91%</div><div class="metric-label">Downtime reduced</div><div class="metric-change">3.35 → 0.38 hrs/day</div></div>
-        <div class="metric-card"><div class="metric-val">₹2.8 Cr</div><div class="metric-label">Saved per quarter</div><div class="metric-change">Zero new machines or headcount</div></div>
+      <div class="metrics-row" id="oee-metrics">
+        <div class="metric-card"><div class="metric-val" id="m-oee">0%</div><div class="metric-label">OEE improvement</div><div class="metric-change" id="c-oee" style="opacity:0;">↑ +41 pts · World-class benchmark</div></div>
+        <div class="metric-card"><div class="metric-val" id="m-dt">↓0%</div><div class="metric-label">Downtime reduced</div><div class="metric-change" id="c-dt" style="opacity:0;">3.35 → 0.38 hrs/day</div></div>
+        <div class="metric-card"><div class="metric-val" id="m-rev">₹0Cr</div><div class="metric-label">Saved per quarter</div><div class="metric-change" id="c-rev" style="opacity:0;">Verified · No new headcount</div></div>
       </div>
       <div class="cs-section">
         <h3>The problem</h3>
@@ -647,6 +647,33 @@
     document.getElementById(id).classList.add('active');
     btn.classList.add('active');
   }
+
+  const DURATION = 1500;
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  function animateCount(el, to, duration, format) {
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = format(to * easeOut(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function fadeIn(el) { el.style.transition = 'opacity 0.5s'; el.style.opacity = '1'; }
+
+  let animated = false;
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      const m1 = document.getElementById('m-oee');
+      const m2 = document.getElementById('m-dt');
+      const m3 = document.getElementById('m-rev');
+      setTimeout(() => { animateCount(m1, 85, DURATION, v => Math.round(v) + '%'); setTimeout(() => fadeIn(document.getElementById('c-oee')), DURATION); }, 100);
+      setTimeout(() => { animateCount(m2, 91, DURATION, v => '↓' + Math.round(v) + '%'); setTimeout(() => fadeIn(document.getElementById('c-dt')), DURATION); }, 300);
+      setTimeout(() => { animateCount(m3, 2.8, DURATION, v => '₹' + v.toFixed(1) + 'Cr'); setTimeout(() => fadeIn(document.getElementById('c-rev')), DURATION); }, 500);
+    }
+  }, { threshold: 0.4 });
+  observer.observe(document.getElementById('oee-metrics'));
 </script>
 </body>
 </html>
