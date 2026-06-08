@@ -688,6 +688,7 @@
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">What has Bharath shipped?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">What's his biggest impact?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">Is he open to new roles?</button>
+        <button onclick="downloadResume()" style="background:#1a1a1a;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#fff;cursor:pointer;text-align:left;transition:background 0.15s;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#2d5be3'" onmouseout="this.style.background='#1a1a1a'"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume</button>
       </div>
     </div>
   </div>
@@ -748,6 +749,8 @@ CERTIFICATIONS:
 
 CONTACT: LinkedIn: linkedin.com/in/bharath-tej-76b26323b | Phone: +91 91215 65048 | Email: Ktej0313@gmail.com
 
+RESUME DOWNLOAD: If anyone asks for Bharath's resume or CV, share this direct download link: https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ
+
 WHAT HE'S LOOKING FOR: Senior PM role at a large company or enterprise across AI, B2B SaaS, or consumer domains. Wants strong engineering culture, data-driven decisions, high ownership teams. Based in Hyderabad, open to Bangalore and remote.`;
 
 let botOpen = false;
@@ -778,6 +781,22 @@ function appendMessage(text, isUser) {
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
   return div;
+}
+
+function downloadResume() {
+  const msgs = document.getElementById('pm-bot-messages');
+  const userDiv = document.createElement('div');
+  userDiv.style.cssText = 'background:#1a1a1a;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;';
+  userDiv.textContent = 'Download Resume';
+  msgs.appendChild(userDiv);
+
+  const botDiv = document.createElement('div');
+  botDiv.style.cssText = 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;';
+  botDiv.innerHTML = '📄 Here\'s Bharath\'s resume! <a href="https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ" target="_blank" style="color:#2d5be3;font-weight:600;text-decoration:none;" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'">Click to download ↓</a>';
+  msgs.appendChild(botDiv);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  window.open('https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ', '_blank');
 }
 
 function appendTyping() {
