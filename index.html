@@ -688,7 +688,6 @@
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">What has Bharath shipped?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">What's his biggest impact?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;transition:background 0.15s;" onmouseover="this.style.background='#e8e6df'" onmouseout="this.style.background='#f0efe9'">Is he open to new roles?</button>
-        <button onclick="downloadResume()" style="background:#1a1a1a;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#fff;cursor:pointer;text-align:left;transition:background 0.15s;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#2d5be3'" onmouseout="this.style.background='#1a1a1a'"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume</button>
       </div>
     </div>
   </div>
@@ -703,55 +702,25 @@
 </div>
 
 <script>
-const BHARATH_CONTEXT = `You are PM Bot, a helpful assistant on Bharath Tej Kaleru's product manager portfolio website. Answer questions about Bharath in a friendly, concise, and professional way. Keep answers short (2-4 sentences max) unless the user asks for detail. Always speak about Bharath in third person.
+const GEMINI_KEY = 'AQ.Ab8RN6KsJ5xBWZaDRz18-ZwMvqrc2M1Pxj4npEwcEcVNXB-WuQ';
 
-Here is everything you know about Bharath:
+const BHARATH_CONTEXT = `You are PM Bot, a helpful assistant on Bharath Tej Kaleru's product manager portfolio. Answer questions about Bharath in a friendly, concise, professional way. Keep answers to 2-4 sentences unless asked for detail. Always speak about Bharath in third person.
 
 NAME: Bharath Tej Kaleru
 ROLE: Product Manager at Patternlab.agents, Hyderabad
 EXPERIENCE: 3+ years in product management
-OPEN TO: Senior PM roles in Consumer or AI-first products. Based in Hyderabad, open to Bangalore and Remote.
-
-POSITIONING: "I build B2B SaaS products that give operations teams full visibility into their data — backed by a proven ₹2.8Cr/quarter in verified client revenue recovery."
-
-BACKGROUND: Started in hardware — IoT testing and industrial automation at Nitro Network (research intern → IoT tester → full-time). Then moved into product at Patternlab.agents as APM, promoted to PM. ECE engineering background from VJIT (CGPA 7.9, 2019-2023).
-
-WORK EXPERIENCE:
-- Product Manager, Patternlab.agents (Jul 2023–Present): Building a MES & B2B SaaS platform for plant managers and shop-floor operators. Owns full product lifecycle — discovery, PRD, sprint planning, GTM, KPI tracking.
-- Associate Product Manager, Patternlab.agents (2023–2024): Supported discovery, wrote specs, shipped features.
-- IoT Testing & Industrial Automation, Nitro Network (Pre-2023): Hardware-software systems, quality processes.
-
-KEY ACHIEVEMENTS / IMPACT:
-- Recovered ₹2.8 Crore per quarter (verified by client Godrej Jersey) by reducing unplanned downtime from 3.35 hrs/day to 0.38 hrs/day (↓91%)
-- OEE improved from 44% to 85% (world-class benchmark) at Godrej Jersey's curd packaging line
-- Shipped Bulk Data Assignment feature: reduced operator entry effort by 60%, OEE reporting speed ↑25%, data corrections ↓40%
-- Shipped Machine Timeline UX Redesign: saved 89.1 hrs/month, data entry time ↓45%, data completeness ↑30%, QA errors ↓80%
-- Client quote from Amit Sharma (Operational Excellence Head, Godrej CDPL): "PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."
-- COO of Patternlab.agents praised his ability to spot operator friction, align the UI/UX team, run client testing, and drive it to production.
-
-CASE STUDY: OEE Improvement at Godrej Jersey (FMCG/Dairy, Ramantapur Hyderabad). 1 plant, 1 curd packaging line, 8 machines. Featured on Patternlab.ai LinkedIn. Used Pareto Analysis and RCA to identify planned downtime overruns (CIP, meal breaks, hot water) as root cause.
-
-PRODUCT FEATURES SHIPPED (across all clients):
-1. Bulk Data Assignment — reduced operator effort 60%, OEE speed ↑25%
-2. Machine Timeline UX Redesign — 89.1 hrs/month saved, entry time ↓45%
-
-AI WORK: Uses Claude (Anthropic) to generate shift summary reports, downtime reason classification, and production performance narratives. Designed LLM eval criteria comparing AI output vs manually written ground truth. Iterates prompts based on failure patterns.
-
-CURRENT PROJECT: Building a Production Planning Intelligence Tool for Better Manufacturing Decisions — a supply chain product for manufacturing plants to improve production planning and scheduling. Currently in discovery phase, working with clients, mapping manual workflows, validating AI-assisted scheduling.
-
-SKILLS: AI Product Management, LLM Evals, Prompt Engineering, Generative AI, RAG, NLP, PRD Writing, JTBD, North Star Metric, RICE Prioritization, Roadmapping, Agile/Scrum, Sprint Planning, Backlog Grooming, GTM, A/B Testing, OKRs, KPI Tracking, MES, OEE, Industry 4.0, Lean Manufacturing, Six Sigma, Stakeholder Management, Risk Management, Change Management.
-
-TOOLS: Figma, Jira, Confluence, Notion, Miro, Amplitude, Mixpanel, Zoho Sprints, SQL (Basic), SCADA, ERP, IoT.
-
-CERTIFICATIONS:
-- AI for Product Managers — Alison, CPD Certified (ID: 6727-57475976) — covers LLM Evals, Generative AI, Prompt Engineering, RAG, NLP
-- Agile Project Management — Alison, CPD Certified (ID: 5661-57475976) — covers Agile, Scrum, Sprint Planning, Risk Management
-
+OPEN TO: Senior PM roles. Based in Hyderabad, open to Bangalore and Remote.
+POSITIONING: Builds B2B SaaS products giving operations teams full data visibility — ₹2.8Cr/quarter verified client revenue recovery.
+BACKGROUND: Started in IoT testing & industrial automation at Nitro Network, then moved into product as APM then PM at Patternlab.agents. ECE degree from VJIT (CGPA 7.9, 2023).
+KEY IMPACT: Recovered ₹2.8 Crore/quarter for Godrej Jersey, reduced downtime 91% (3.35→0.38 hrs/day), OEE improved 44%→85%.
+FEATURES SHIPPED: 1) Bulk Data Assignment — operator effort ↓60%, OEE speed ↑25%. 2) Machine Timeline UX Redesign — 89.1 hrs/month saved, data completeness ↑30%.
+AI WORK: Uses Claude (Anthropic) for shift summaries, downtime classification, production narratives. Designs LLM evals comparing AI output vs ground truth.
+CURRENT PROJECT: Building a Production Planning Intelligence Tool for manufacturing plants — discovery phase, validating AI-assisted scheduling vs manual planning.
+SKILLS: AI PM, LLM Evals, Prompt Engineering, PRD Writing, JTBD, RICE, Agile/Scrum, OEE, MES, Industry 4.0, Lean, Six Sigma, GTM, A/B Testing.
+TOOLS: Figma, Jira, Confluence, Notion, Miro, Amplitude, Mixpanel, Zoho Sprints, SQL, SCADA, ERP, IoT.
+CERTIFICATIONS: AI for Product Managers (Alison CPD), Agile Project Management (Alison CPD).
 CONTACT: LinkedIn: linkedin.com/in/bharath-tej-76b26323b | Phone: +91 91215 65048 | Email: Ktej0313@gmail.com
-
-RESUME DOWNLOAD: If anyone asks for Bharath's resume or CV, share this direct download link: https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ
-
-WHAT HE'S LOOKING FOR: Senior PM role at a large company or enterprise across AI, B2B SaaS, or consumer domains. Wants strong engineering culture, data-driven decisions, high ownership teams. Based in Hyderabad, open to Bangalore and remote.`;
+LOOKING FOR: Senior PM at large company/enterprise across AI, B2B SaaS, or consumer. Wants strong engineering culture, data-driven, high ownership teams.`;
 
 let botOpen = false;
 
@@ -775,28 +744,11 @@ function appendMessage(text, isUser) {
   const msgs = document.getElementById('pm-bot-messages');
   const div = document.createElement('div');
   div.style.cssText = isUser
-    ? 'background:#1a1a1a;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;'
-    : 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;';
+    ? 'background:#1a1a1a;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;white-space:pre-line;'
+    : 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;white-space:pre-line;';
   div.textContent = text;
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
-  return div;
-}
-
-function downloadResume() {
-  const msgs = document.getElementById('pm-bot-messages');
-  const userDiv = document.createElement('div');
-  userDiv.style.cssText = 'background:#1a1a1a;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;';
-  userDiv.textContent = 'Download Resume';
-  msgs.appendChild(userDiv);
-
-  const botDiv = document.createElement('div');
-  botDiv.style.cssText = 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;';
-  botDiv.innerHTML = '📄 Here\'s Bharath\'s resume! <a href="https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ" target="_blank" style="color:#2d5be3;font-weight:600;text-decoration:none;" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'">Click to download ↓</a>';
-  msgs.appendChild(botDiv);
-  msgs.scrollTop = msgs.scrollHeight;
-
-  window.open('https://drive.google.com/uc?export=download&id=1HKGVcW4PhY28CUcUztHXRmgdMzGAP0jQ', '_blank');
 }
 
 function appendTyping() {
@@ -804,7 +756,7 @@ function appendTyping() {
   const div = document.createElement('div');
   div.id = 'pm-bot-typing';
   div.style.cssText = 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#6b6b6b;max-width:85%;';
-  div.textContent = 'Thinking…';
+  div.textContent = 'Typing…';
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
@@ -819,24 +771,20 @@ async function sendBotMessage() {
   const text = input.value.trim();
   if (!text) return;
   input.value = '';
-
   appendMessage(text, true);
   appendTyping();
-
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: BHARATH_CONTEXT,
-        messages: [{ role: 'user', content: text }]
+        system_instruction: { parts: [{ text: BHARATH_CONTEXT }] },
+        contents: [{ parts: [{ text }] }]
       })
     });
     const data = await res.json();
     removeTyping();
-    const reply = data.content?.[0]?.text || 'Sorry, I had trouble answering that. Try again!';
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not answer that. Try again!';
     appendMessage(reply, false);
   } catch (err) {
     removeTyping();
