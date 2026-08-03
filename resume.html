@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharath Tej Kaleru — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f4f3ef; --bg2: #ffffff;
+  --border: rgba(0,0,0,0.1);
+  --text: #1a1a1a; --muted: #5a5a5a;
+  --accent: #2d5be3;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; font-size: 14px; }
+.page { max-width: 780px; margin: 0 auto; background: var(--bg2); padding: 3rem 3.25rem; }
+.toolbar { max-width: 780px; margin: 0 auto; padding: 14px 3.25rem 0; display: flex; justify-content: flex-end; }
+.print-btn { background: var(--text); color: #fff; border: none; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; }
+.print-btn:hover { opacity: 0.9; }
+
+h1.name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+.tagline { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+.contact { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.contact a { color: var(--accent); text-decoration: none; }
+
+h2.section { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text); border-bottom: 1.5px solid var(--text); padding-bottom: 4px; margin-top: 22px; margin-bottom: 10px; }
+p.summary { font-size: 13px; color: #2a2a2a; line-height: 1.7; }
+
+.skill-line { font-size: 12.5px; margin-bottom: 6px; line-height: 1.6; }
+.skill-line b { font-weight: 600; }
+
+.role-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; flex-wrap: wrap; }
+.role-title { font-size: 14px; font-weight: 700; }
+.role-dates { font-size: 12px; color: var(--muted); font-style: italic; }
+.role-intro { font-size: 12.5px; color: var(--muted); margin: 3px 0 6px; line-height: 1.6; }
+.subhead { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 8px; margin-bottom: 3px; }
+ul.bullets { padding-left: 18px; margin-bottom: 4px; }
+ul.bullets li { font-size: 12.5px; margin-bottom: 3px; line-height: 1.6; }
+.win-title { font-size: 12.5px; font-weight: 700; font-style: italic; margin-top: 10px; }
+.win-body { font-size: 12.5px; color: #2a2a2a; line-height: 1.6; margin: 2px 0; }
+.win-impact { font-size: 12px; font-weight: 700; color: #15803d; line-height: 1.6; }
+
+.edu-cert { font-size: 12.5px; line-height: 1.7; }
+
+@media print {
+  body { background: #fff; }
+  .toolbar { display: none; }
+  .page { padding: 0; max-width: 100%; }
+  @page { margin: 14mm 16mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<div class="page">
+  <h1 class="name">Bharath Tej Kaleru</h1>
+  <div class="tagline">Product Manager | Enterprise SaaS | AI Products | Manufacturing Technology</div>
+  <div class="contact">Hyderabad, India | Open to Hyderabad, Bangalore, and Remote</div>
+  <div class="contact">Phone: +91 91215 65048 | Email: ktej0313@gmail.com</div>
+  <div class="contact">LinkedIn: <a href="https://linkedin.com/in/bharath-tej-76b26323b">linkedin.com/in/bharath-tej-76b26323b</a> | Portfolio: <a href="https://bharathtej.vercel.app">bharathtej.vercel.app</a></div>
+
+  <h2 class="section">Professional Summary</h2>
+  <p class="summary">3+ years of experience across Product Management, Business Analysis, an enterprise SaaS platform for manufacturing operations, Industrial Automation, and AI Product Development. Began my career in industrial automation, building a deep understanding of manufacturing operations and customer workflows, then transitioned into a Business Analyst role gathering requirements, managing backlogs, and coordinating Agile delivery, before taking ownership of product discovery, roadmap prioritization, and AI-enabled feature delivery as Product Manager. Partners with plant managers, operators, engineering, and design to reduce production losses and improve OEE, and designs AI-powered product experiences using the Claude API, prompt engineering, and LLM evaluation.</p>
+
+  <h2 class="section">Core Skills</h2>
+  <div class="skill-line"><b>Product Management:</b> Discovery and Customer Research, Roadmap Prioritization and Strategy, PRDs and User Stories, Sprint Planning and Backlog Management, Stakeholder Management</div>
+  <div class="skill-line"><b>Business Analysis:</b> Requirements Gathering and Workflow Analysis, Functional Requirements and Acceptance Criteria, UAT and Release Validation, Process Documentation</div>
+  <div class="skill-line"><b>Analytics and AI:</b> OEE and Product Analytics (Zipy, LogRocket, SQL), Claude API and Prompt Engineering, LLM Evaluation and Generative AI Feature Design</div>
+  <div class="skill-line"><b>Domains and Tools:</b> Enterprise B2B SaaS, Enterprise SaaS Platform for Manufacturing Operations, Enterprise Workflow Automation and Operational Analytics, Jira, Zoho Sprints, Confluence, Figma, Notion, SQL</div>
+
+  <h2 class="section">Professional Experience</h2>
+
+  <div class="role-head"><span class="role-title">Product Manager — Patternlab.agents</span><span class="role-dates">January 2026 – Present</span></div>
+  <div class="role-intro">Own the end-to-end product lifecycle for an enterprise SaaS platform for manufacturing operations, used across multiple manufacturing plants, driving discovery, prioritization, Agile delivery, customer adoption, and AI-enabled product innovation.</div>
+
+  <div class="subhead">Product Strategy and Discovery</div>
+  <ul class="bullets"><li>Own product vision, roadmap, and feature prioritization; lead discovery through shop-floor observations, customer interviews, JTBD analysis, and user journey mapping.</li></ul>
+
+  <div class="subhead">Product Delivery and Analytics</div>
+  <ul class="bullets">
+    <li>Own backlog and acceptance criteria; manage sprint planning and cross-functional coordination across engineering and QA to ship end-to-end feature releases.</li>
+    <li>Use Zipy and LogRocket session analytics to track feature adoption and customer feedback, informing continuous product iteration.</li>
+  </ul>
+
+  <div class="subhead">AI Product Development</div>
+  <ul class="bullets"><li>Design prompts and evaluation criteria for AI features, including shift summaries and downtime classification, using the Claude API and LLM evaluation.</li></ul>
+
+  <div class="win-title">Selected Win: Bulk Downtime Assignment, Enterprise Workflow Optimization</div>
+  <div class="win-body">Collapsed a multi-step, per-shift downtime entry process into a single action after validating the problem through operator interviews and session analytics.</div>
+  <div class="win-impact">Impact: 60 percent reduction in operator effort, 40 percent fewer supervisor corrections, 1.5 hours per day saved, and became the standard onboarding workflow.</div>
+
+  <div class="win-title">Selected Win: Machine Timeline Redesign, Operator Workflow Experience</div>
+  <div class="win-body">Replaced fragmented popup UI with inline interactions to stop operators skipping downtime entries, balancing efficiency with data traceability.</div>
+  <div class="win-impact">Impact: 45 percent faster entry time, 30 percent more complete data, 80 percent fewer QA errors, 89.1 hours per month saved, and adopted as the baseline UX standard.</div>
+
+  <div class="role-head"><span class="role-title">Business Analyst — Gowell Communications</span><span class="role-dates">June 2024 – December 2025</span></div>
+  <div class="role-intro">Served as the bridge between customers, engineering, and product teams on an enterprise SaaS platform for manufacturing operations, analyzing manufacturing workflows, gathering requirements, and supporting delivery ahead of promotion to Product Manager.</div>
+
+  <div class="subhead">Requirements, Agile Delivery, and Stakeholder Management</div>
+  <ul class="bullets">
+    <li>Gathered business requirements from enterprise customers and conducted workflow analysis to identify operational challenges, converting findings into functional requirements, user stories, and acceptance criteria.</li>
+    <li>Managed backlog refinement and sprint planning, conducted UAT, and coordinated release validation and deployment planning across shifting priorities and dependencies.</li>
+    <li>Partnered with Production Managers, Plant Managers, Operators, CEOs, Engineering, QA, and UI/UX teams to align delivery with business needs.</li>
+  </ul>
+
+  <div class="subhead">Customer Success and Delivery Coordination</div>
+  <ul class="bullets">
+    <li>Led customer onboarding, product implementation, demonstrations, and user training; collected feedback and ran quarterly improvement reviews and post-go-live support.</li>
+    <li>Ran daily stand-ups, sprint reviews, and retrospectives; tracked delivery in Jira and Zoho Sprints, including story points, sprint burndown, and team performance reporting.</li>
+  </ul>
+
+  <div class="role-head"><span class="role-title">Industrial Automation and Product Associate — Nitro Network</span><span class="role-dates">July 2023 – May 2024</span></div>
+  <div class="role-intro">Started my career in industrial automation, working on IoT-based manufacturing solutions and collaborating with engineering and product teams to understand workflows, validate features, and improve usability based on customer feedback.</div>
+  <ul class="bullets">
+    <li>Tested IoT-enabled industrial automation solutions and participated in product discussions to understand business use cases.</li>
+    <li>Gathered customer and internal stakeholder feedback; supported feature validation and product testing, documenting observations and suggested usability improvements.</li>
+    <li>Built a foundational understanding of manufacturing processes, enterprise workflow automation and operational analytics, and machine connectivity that continues to inform current product decisions.</li>
+  </ul>
+
+  <h2 class="section">AI Product Portfolio</h2>
+  <div class="subhead">AI-Powered Portfolio Assistant (Claude API), 2025 – Present</div>
+  <ul class="bullets"><li>Designed conversation flows, prompt strategy, and evaluation criteria for a recruiter-facing AI assistant deployed via Vercel, focused on response quality and guardrails.</li></ul>
+  <div class="subhead">AI Features in Production, Patternlab.agents</div>
+  <ul class="bullets"><li>Designed prompts and LLM evaluation criteria for AI-generated shift summaries and downtime classification, validated against manually written ground truth.</li></ul>
+
+  <h2 class="section">Key Achievements</h2>
+  <ul class="bullets">
+    <li>Contributed to an estimated 2.8 crore rupees per quarter in recovered revenue by redesigning downtime reporting workflows, cutting unplanned downtime from 3.35 to 0.38 hours per day across one plant, one line, and eight machines.</li>
+    <li>Led 24 or more enterprise implementations across 8 or more manufacturing plants, consistently meeting go-live timelines under one week.</li>
+    <li>Conducted 25 or more product demonstrations supporting 6 enterprise customer conversions.</li>
+  </ul>
+
+  <h2 class="section">Education</h2>
+  <div class="edu-cert">Bachelor of Engineering, Electronics and Communication Engineering — Vidya Jyothi Institute of Technology, Hyderabad (2019 – 2023), CGPA: 7.9</div>
+
+  <h2 class="section">Certifications</h2>
+  <div class="edu-cert">
+    • AI for Product Managers — Alison, CPD Certified (Generative AI, LLM Evaluations, Prompt Engineering, AI Feature Roadmapping)<br>
+    • Agile Project Management — Alison, CPD Certified (Agile, Scrum, Sprint Planning, Release Management)
+  </div>
+</div>
+
+</body>
+</html>
