@@ -3,935 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bharath Tej Kaleru — Product Manager</title>
+<title>Bharath Tej Kaleru — Resume</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #f4f3ef; --bg2: #ffffff; --bg3: #f0efe9;
-  --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.12);
-  --text: #1a1a1a; --muted: #6b6b6b;
-  --accent: #2d5be3; --accent2: #1a3fa8;
-  --teal: #0d9488; --green: #15803d; --amber: #92400e;
-  --soft: #e8e6df;
+  --bg: #f4f3ef; --bg2: #ffffff;
+  --border: rgba(0,0,0,0.1);
+  --text: #1a1a1a; --muted: #5a5a5a;
+  --accent: #2d5be3;
 }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(244,243,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-.nav-inner { max-width: 960px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 52px; }
-.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--text); }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-cta { font-size: 13px; font-weight: 500; background: var(--text); color: #fff; padding: 7px 16px; border-radius: 4px; text-decoration: none; }
-.container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
-section { padding: 5rem 0; }
-.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 0.75rem; }
-.section-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.7; }
-.divider { border: none; border-top: 1px solid var(--border); max-width: 960px; margin: 0 auto; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; font-size: 14px; }
+.page { max-width: 780px; margin: 0 auto; background: var(--bg2); padding: 3rem 3.25rem; }
+.toolbar { max-width: 780px; margin: 0 auto; padding: 14px 3.25rem 0; display: flex; justify-content: flex-end; }
+.print-btn { background: var(--text); color: #fff; border: none; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; }
+.print-btn:hover { opacity: 0.9; }
 
-/* HERO */
-#hero { padding-top: 7rem; padding-bottom: 4rem; }
-.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #dcfce7; border: 1px solid #bbf7d0; color: var(--green); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 3px; margin-bottom: 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
-.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(32px,5vw,52px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 0.5rem; }
-.hero-role { font-size: 16px; color: var(--muted); margin-bottom: 1rem; }
-.hero-statement { font-size: 15px; color: #3a3a3a; max-width: 560px; line-height: 1.8; margin-bottom: 1.75rem; border-left: 2px solid var(--accent); padding-left: 1rem; font-style: italic; }
-.hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
-.btn-primary { background: var(--text); color: #fff; padding: 10px 22px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 500; }
-.btn-outline { background: transparent; color: var(--text); padding: 10px 22px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 500; border: 1px solid var(--border2); display: flex; align-items: center; gap: 7px; }
-.btn-outline svg { width: 14px; height: 14px; }
-.hero-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 2rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--bg2); }
-.stat-item { padding: 1.25rem 1.5rem; border-right: 1px solid var(--border); }
-.stat-item:last-child { border-right: none; }
-.stat-val { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
-.stat-val.accent { color: var(--accent); }
-.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
-.cs-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 1rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #eff2fd; }
-.cs-stat-item { padding: 1rem 1.5rem; border-right: 1px solid rgba(45,91,227,0.15); }
-.cs-stat-item:last-child { border-right: none; }
-.cs-stat-val { font-size: 20px; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; }
-.cs-stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+h1.name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+.tagline { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+.contact { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.contact a { color: var(--accent); text-decoration: none; }
 
-/* ABOUT */
-.about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; margin-top: 2rem; }
-.about-text { font-size: 15px; color: #3a3a3a; line-height: 1.85; }
-.about-text p { margin-bottom: 1rem; }
-.focus-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; margin-bottom: 1rem; }
-.focus-card:last-child { margin-bottom: 0; }
-.focus-card h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
-.focus-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { font-size: 12px; padding: 4px 10px; border-radius: 3px; border: 1px solid var(--border2); color: var(--muted); background: var(--bg3); }
-.tag.accent { background: #eff2fd; border-color: #c7d0f8; color: var(--accent2); }
+h2.section { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text); border-bottom: 1.5px solid var(--text); padding-bottom: 4px; margin-top: 22px; margin-bottom: 10px; }
+p.summary { font-size: 13px; color: #2a2a2a; line-height: 1.7; }
 
-/* EXPERIENCE */
-.timeline { margin-top: 2rem; }
-.tl-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
-.tl-item:last-child { border-bottom: none; }
-.tl-date { font-size: 12px; color: var(--muted); padding-top: 3px; }
-.tl-company { font-size: 12px; color: var(--accent); font-weight: 500; margin-top: 3px; }
-.tl-title { font-size: 16px; font-weight: 600; margin-bottom: 3px; }
-.tl-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-top: 6px; }
-.tl-desc li { list-style: none; padding-left: 1rem; position: relative; margin-bottom: 4px; }
-.tl-desc li::before { content: '—'; position: absolute; left: 0; color: var(--muted); font-size: 11px; top: 4px; }
-.tl-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.result-pill { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 3px; background: #f0fdf4; border: 1px solid #bbf7d0; color: var(--green); }
+.skill-line { font-size: 12.5px; margin-bottom: 6px; line-height: 1.6; }
+.skill-line b { font-weight: 600; }
 
-/* CUSTOMER SUCCESS */
-.cs-section-wrap { background: #eff2fd; border: 1px solid #c7d0f8; border-radius: 6px; padding: 2rem; margin-top: 2rem; }
-.cs-section-wrap h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
-.cs-section-wrap p { font-size: 14px; color: #3a3a3a; line-height: 1.8; margin-bottom: 1.25rem; }
-.cs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.25rem; }
-.cs-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; }
-.cs-card h4 { font-size: 11px; font-weight: 600; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-.cs-card ul { list-style: none; padding: 0; }
-.cs-card ul li { font-size: 13px; color: #3a3a3a; line-height: 1.7; padding-left: 1rem; position: relative; margin-bottom: 4px; }
-.cs-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+.role-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; flex-wrap: wrap; }
+.role-title { font-size: 14px; font-weight: 700; }
+.role-dates { font-size: 12px; color: var(--muted); font-style: italic; }
+.role-intro { font-size: 12.5px; color: var(--muted); margin: 3px 0 6px; line-height: 1.6; }
+.subhead { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 8px; margin-bottom: 3px; }
+ul.bullets { padding-left: 18px; margin-bottom: 4px; }
+ul.bullets li { font-size: 12.5px; margin-bottom: 3px; line-height: 1.6; }
+.win-title { font-size: 12.5px; font-weight: 700; font-style: italic; margin-top: 10px; }
+.win-body { font-size: 12.5px; color: #2a2a2a; line-height: 1.6; margin: 2px 0; }
+.win-impact { font-size: 12px; font-weight: 700; color: #15803d; line-height: 1.6; }
 
-/* CASE STUDY */
-.cs-header { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 2rem; margin-top: 2rem; }
-.cs-badge { display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0; color: var(--green); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 3px; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.cs-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 0.25rem; }
-.cs-client { font-size: 13px; color: var(--muted); margin-bottom: 1.75rem; }
-.metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 2rem; }
-.metric-card { background: var(--bg3); padding: 1.25rem; text-align: center; }
-.metric-val { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; }
-.metric-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.metric-change { font-size: 11px; font-weight: 600; color: var(--green); margin-top: 3px; }
-.cs-tabs { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px 6px 0 0; overflow: hidden; margin-top: 2rem; }
-.cs-tab { font-size: 13px; font-weight: 500; padding: 12px 20px; border: none; color: var(--muted); cursor: pointer; background: var(--bg3); border-right: 1px solid var(--border); flex: 1; text-align: left; }
-.cs-tab:last-child { border-right: none; }
-.cs-tab.active { background: var(--bg2); color: var(--text); font-weight: 600; }
-.cs-panel { display: none; background: var(--bg2); border: 1px solid var(--border); border-top: none; border-radius: 0 0 6px 6px; padding: 2rem; }
-.cs-panel.active { display: block; }
-.cs-sec { margin-bottom: 1.75rem; }
-.cs-sec h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-.cs-sec p, .cs-sec li { font-size: 14px; color: #3a3a3a; line-height: 1.8; }
-.cs-sec ul { padding-left: 1.25rem; }
-.cs-sec li { margin-bottom: 5px; }
-.pareto-bar { margin-bottom: 10px; }
-.pareto-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-.pareto-track { background: var(--soft); border-radius: 2px; height: 6px; overflow: hidden; }
-.pareto-fill { height: 100%; border-radius: 2px; background: var(--accent); }
-.pareto-fill.dim { background: #cbd5e1; }
-.quote-block { background: #f8f7f4; border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-.quote-block p { font-size: 14px; color: #3a3a3a; line-height: 1.8; font-style: italic; }
-.quote-block cite { font-size: 12px; color: var(--muted); margin-top: 8px; display: block; font-style: normal; font-weight: 500; }
-.cs-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.25rem; }
-.cs-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--accent); text-decoration: none; border: 1px solid #c7d0f8; background: #eff2fd; padding: 6px 12px; border-radius: 3px; }
-.figma-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-.figma-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-.figma-card-head { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-.figma-card-head span { font-size: 12px; font-weight: 500; color: var(--muted); }
-.figma-card-head a { font-size: 11px; color: var(--accent); text-decoration: none; font-weight: 500; }
-.figma-card-body { padding: 12px 14px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.edu-cert { font-size: 12.5px; line-height: 1.7; }
 
-/* AI WORK */
-.ai-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2rem; }
-.ai-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; }
-.ai-card h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-.ai-card p { font-size: 14px; color: #3a3a3a; line-height: 1.75; margin-bottom: 1rem; }
-.sp { font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; display: inline-block; margin: 2px 2px 0 0; }
-.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1rem; }
-.ba-card { padding: 12px; border-radius: 4px; }
-.ba-card.before { background: #fef2f2; border: 1px solid #fecaca; }
-.ba-card.after { background: #f0fdf4; border: 1px solid #bbf7d0; }
-.ba-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-.ba-card.before .ba-label { color: #dc2626; }
-.ba-card.after .ba-label { color: var(--green); }
-.ba-card p { font-size: 12px; color: #3a3a3a; line-height: 1.6; }
-.process-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 1.5rem; }
-.process-step { background: var(--bg2); padding: 1.25rem; text-align: center; }
-.process-num { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-.process-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.process-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-
-/* SKILLS */
-.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2rem; }
-.skill-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; }
-.skill-card h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-.skill-pills { display: flex; flex-wrap: wrap; gap: 5px; }
-.cert-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-.cert-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; display: flex; gap: 12px; }
-.cert-icon { width: 36px; height: 36px; border-radius: 4px; background: #fef9c3; border: 1px solid #fde68a; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-.cert-name { font-size: 14px; font-weight: 500; }
-.cert-issuer { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.cert-id { font-size: 11px; color: var(--accent); margin-top: 4px; font-family: monospace; }
-
-/* DESIGN EVOLUTION */
-.design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-.design-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-.design-card-head { background: var(--bg3); padding: 14px 18px; border-bottom: 1px solid var(--border); }
-.design-card-head.accent { background: #eff2fd; border-color: #c7d0f8; }
-.design-card-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-.design-card-label.accent { color: var(--accent); }
-.design-card-title { font-size: 13px; font-weight: 600; color: var(--text); }
-.design-card-body { padding: 18px; font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-/* LOOKING FOR */
-.looking-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2rem; }
-.looking-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; }
-.looking-card .icon { font-size: 18px; margin-bottom: 8px; }
-.looking-card h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
-.looking-card p { font-size: 13px; color: #3a3a3a; line-height: 1.7; }
-.looking-summary { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 1.25rem 1.5rem; margin-top: 1rem; font-size: 14px; color: #3a3a3a; line-height: 1.8; }
-
-/* CONTACT */
-.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-.contact-text h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 0.75rem; }
-.contact-text p { font-size: 15px; color: var(--muted); line-height: 1.75; }
-.contact-links { display: flex; flex-direction: column; gap: 10px; }
-.contact-link { display: flex; align-items: center; gap: 12px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: border-color 0.2s; }
-.contact-link:hover { border-color: var(--accent); }
-.contact-link svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
-.contact-link span { color: var(--muted); font-size: 12px; margin-left: auto; }
-footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; font-size: 12px; color: var(--muted); }
-
-@media(max-width:640px) {
-  .hero-stats, .cs-stats, .looking-grid { grid-template-columns: 1fr 1fr; }
-  .metrics-row, .ai-grid, .skills-grid, .figma-row, .process-row, .cs-grid, .design-grid { grid-template-columns: 1fr; }
-  .about-grid, .contact-inner { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .tl-item { grid-template-columns: 1fr; gap: 0.25rem; }
+@media print {
+  body { background: #fff; }
+  .toolbar { display: none; }
+  .page { padding: 0; max-width: 100%; }
+  @page { margin: 14mm 16mm; }
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Bharath Tej</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#casestudy">Work</a></li>
-      <li><a href="#aiwork">AI</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="mailto:Ktej0313@gmail.com" class="nav-cta">Let's connect</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="container">
-    <div class="hero-badge">🟢 Product Manager at Patternlab.agents</div>
-    <h1 class="hero-name">Bharath Tej Kaleru</h1>
-    <p class="hero-role">Product Manager · Business Analysis → Product · AI-First · B2B SaaS & MES · Hyderabad</p>
-    <p class="hero-statement">"I earned my way into product — from testing IoT hardware, to analyzing manufacturing workflows as a Business Analyst, to owning the roadmap as PM. Along the way I helped recover ₹2.8Cr/quarter in verified client revenue by solving the operational problems behind the data."</p>
-    <div class="hero-ctas">
-      <a href="#casestudy" class="btn-primary">View my work</a>
-      <a href="./resume.pdf" download class="btn-outline">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Resume
-      </a>
-      <a href="https://linkedin.com/in/bharath-tej-76b26323b" target="_blank" class="btn-outline">LinkedIn →</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item"><div class="stat-val accent">₹2.8Cr</div><div class="stat-label">Revenue / qtr</div></div>
-      <div class="stat-item"><div class="stat-val accent">↓91%</div><div class="stat-label">Downtime cut</div></div>
-      <div class="stat-item"><div class="stat-val">3.5+</div><div class="stat-label">Yrs, hardware to PM</div></div>
-      <div class="stat-item"><div class="stat-val">0→1</div><div class="stat-label">Builder</div></div>
-    </div>
-    <div class="cs-stats">
-      <div class="cs-stat-item"><div class="cs-stat-val">24+</div><div class="cs-stat-label">Enterprise implementations</div></div>
-      <div class="cs-stat-item"><div class="cs-stat-val">50+</div><div class="cs-stat-label">Users onboarded</div></div>
-      <div class="cs-stat-item"><div class="cs-stat-val">25+</div><div class="cs-stat-label">Product demos delivered</div></div>
-      <div class="cs-stat-item"><div class="cs-stat-val">8+</div><div class="cs-stat-label">Manufacturing plants</div></div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="section-label">Background</div>
-    <h2 class="section-title">About me</h2>
-    <div class="about-grid">
-      <div>
-        <div class="about-text">
-          <p>I started hands-on with hardware — IoT testing and industrial automation at Nitro Network — before making the move toward product. That technical grounding shapes how I think: I ask the "why" behind every user problem and the "how" behind every build decision.</p>
-          <p>From there I moved into a Business Analyst role at Go Well Communications, staffed full-time on Patternlab's enterprise SaaS platform for manufacturing operations — gathering requirements, mapping manufacturing workflows, and translating shop-floor problems into user stories and PRDs for clients like Godrej Jersey. That work is where the Godrej OEE case study and both shipped product features came from. It's also what earned me a direct offer to join Patternlab.agents as Product Manager, where I now own the roadmap on the same product I helped analyze and shape.</p>
-          <p>I'm AI-certified in LLM Evals, Prompt Engineering, and Generative AI — and I apply these hands-on in the products I build, not just as lines on a resume.</p>
-        </div>
-      </div>
-      <div>
-        <div class="focus-card">
-          <h3>Areas of focus</h3>
-          <div class="focus-tags">
-            <span class="tag accent">Product Management</span>
-            <span class="tag accent">Business Analysis</span>
-            <span class="tag accent">AI Product Management</span>
-            <span class="tag accent">B2B SaaS</span>
-            <span class="tag accent">Product Discovery & Strategy</span>
-            <span class="tag accent">Product Analytics</span>
-            <span class="tag accent">Workflow Automation</span>
-          </div>
-        </div>
-        <div class="focus-card">
-          <h3>Domain expertise</h3>
-          <div class="focus-tags">
-            <span class="tag" style="background:#eff2fd;border-color:#c7d0f8;color:#1a3fa8;">Industry 4.0</span>
-            <span class="tag" style="background:#eff2fd;border-color:#c7d0f8;color:#1a3fa8;">Manufacturing Execution Systems (MES)</span>
-            <span class="tag" style="background:#eff2fd;border-color:#c7d0f8;color:#1a3fa8;">Operational Intelligence</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="section-label">Career</div>
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div>
-          <div class="tl-date">Jan 2026 – Present</div>
-          <div class="tl-company">Patternlab.agents</div>
-        </div>
-        <div>
-          <div class="tl-title">Product Manager</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Promoted to Product Manager after ~1.5 years staffed on the same product as a Business Analyst — hired directly by Patternlab.agents based on delivery track record.</li>
-              <li>Own Product Discovery, roadmap planning, and feature delivery for a B2B SaaS platform for manufacturing operations, focused on workflow automation, operational intelligence, and production analytics.</li>
-              <li>Conduct user research, stakeholder interviews, and workflow analysis to identify customer pain points and product opportunities.</li>
-              <li>Own PRDs, user stories, roadmap planning, feature prioritization, and Agile delivery across cross-functional teams.</li>
-              <li>Act as Product Owner — managing backlog prioritization, sprint planning, acceptance criteria, and feature releases.</li>
-              <li>Use Product Analytics (Mixpanel, Amplitude) and user feedback to improve adoption, engagement, and operational efficiency.</li>
-              <li>Explore AI Product Management and Generative AI use cases to improve user productivity and business outcomes.</li>
-            </ul>
-          </div>
-          <div class="tl-pills">
-            <span class="result-pill">Promoted from BA → PM</span>
-            <span class="result-pill">Same product, direct hire</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div>
-          <div class="tl-date">Jun 2024 – Dec 2025</div>
-          <div class="tl-company">Go Well Communications</div>
-        </div>
-        <div>
-          <div class="tl-title">Business Analyst — staffed on Patternlab's Enterprise Workflow Automation Platform</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Formally employed by Go Well Communications, full-time staffed on Patternlab.agents' enterprise manufacturing operations platform as the bridge between customers, engineering, and product teams.</li>
-              <li>Gathered business requirements from enterprise manufacturing customers and translated them into functional requirements, user stories, and acceptance criteria.</li>
-              <li>Ran workflow analysis on the factory floor to identify operational gaps — this work is the foundation of the Godrej Jersey OEE case study (44%→85%, ₹2.8Cr/qtr recovered).</li>
-              <li>Supported backlog refinement, sprint planning, sprint execution, and UAT across Agile delivery cycles.</li>
-              <li>Owned customer onboarding, product implementation, demos, training, and post-go-live support across 24+ enterprise rollouts.</li>
-              <li>Delivered 25+ product demos to Production Managers, Plant Managers, CEOs, and CFOs, contributing to 6 new customer conversions.</li>
-              <li>Tracked delivery via Jira and Zoho Sprints — story points, sprint burndown, and quarterly customer improvement reporting.</li>
-            </ul>
-          </div>
-          <div class="tl-pills">
-            <span class="result-pill">₹2.8Cr/qtr recovered</span>
-            <span class="result-pill">↓91% downtime</span>
-            <span class="result-pill">24+ implementations</span>
-            <span class="result-pill">6 new customers</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div>
-          <div class="tl-date">Jul 2023 – May 2024</div>
-          <div class="tl-company">Nitro Network</div>
-        </div>
-        <div>
-          <div class="tl-title">Product Associate</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Tested IoT-enabled industrial automation solutions and collaborated with engineering and product teams on manufacturing use cases.</li>
-              <li>Gathered customer and internal stakeholder feedback to support feature validation and usability improvements.</li>
-              <li>Built foundational understanding of manufacturing processes, Industry 4.0, and machine connectivity.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div>
-          <div class="tl-date">Jan 2023 – Jun 2023</div>
-          <div class="tl-company">Nitro Network</div>
-        </div>
-        <div>
-          <div class="tl-title">Research & Industrial Automation — Internship</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Started my career here, working on IoT-based manufacturing solutions and hardware-software systems.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div>
-          <div class="tl-date">2019 – 2023</div>
-          <div class="tl-company">VJIT, Hyderabad</div>
-        </div>
-        <div>
-          <div class="tl-title">B.E. — Electronics & Communication Engineering</div>
-          <div class="tl-desc"><ul><li>CGPA 7.9 · Vidya Jyothi Institute of Technology</li></ul></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CUSTOMER SUCCESS SECTION -->
-    <div class="section-label" style="margin-top:3rem;">Customer impact</div>
-    <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:0.5rem;">Customer Success on Patternlab's platform</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:1.5rem;">As Business Analyst (Jun 2024–Dec 2025), staffed full-time on Patternlab's manufacturing operations platform, I owned the full customer lifecycle — from onboarding to retention — for enterprise manufacturing clients.</p>
-    <div class="cs-section-wrap">
-      <div class="cs-grid">
-        <div class="cs-card">
-          <h4>Enterprise Onboarding</h4>
-          <ul>
-            <li>Managed 24+ enterprise implementations from kickoff to go-live — avg under 1 week</li>
-            <li>End-to-end: credential provisioning, implementation planning, go-live coordination, post-launch support</li>
-            <li>Onboarded 50+ users via live sessions, multilingual videos, and structured documentation</li>
-          </ul>
-        </div>
-        <div class="cs-card">
-          <h4>Product Demos & Conversion</h4>
-          <ul>
-            <li>Delivered 25+ product demonstrations to C-suite and plant-level stakeholders</li>
-            <li>Presented to Production Managers, Plant Managers, CEOs, and CFOs</li>
-            <li>Contributed to 6 new customer conversions through demo-led engagement</li>
-          </ul>
-        </div>
-        <div class="cs-card">
-          <h4>Retention & Account Health</h4>
-          <ul>
-            <li>Managed renewals and proactively identified churn risks across 8+ manufacturing plants</li>
-            <li>Resolved 2–5 critical escalations/month with immediate SLA response</li>
-            <li>Used Zipy & LogRocket to analyze user behavior and validate product improvements</li>
-          </ul>
-        </div>
-      </div>
-      <div class="quote-block" style="margin-top:1.5rem;margin-bottom:0;">
-        <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
-        — Amit Sharma, Operational Excellence Head, Godrej CDPL
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- CASE STUDY -->
-<section id="casestudy">
-  <div class="container">
-    <div class="section-label">Featured work</div>
-    <h2 class="section-title">Case study & shipped features</h2>
-    <p class="section-sub">One client-approved case study. Two product features shipped across all clients.</p>
-
-    <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.1em;margin-top:2.5rem;margin-bottom:10px;">Client case study</div>
-    <div class="cs-header">
-      <div class="cs-badge">✓ Client verified · Featured on Patternlab.ai LinkedIn</div>
-      <div class="cs-title">OEE Improvement — Godrej Jersey</div>
-      <div class="cs-client">FMCG / Dairy · Curd Packaging Line · Ramantapur, Hyderabad · 1 plant · 8 machines · Delivered as Business Analyst, staffed on Patternlab's manufacturing operations platform</div>
-      <div class="metrics-row" id="oee-metrics">
-        <div class="metric-card"><div class="metric-val" id="m-oee">0%</div><div class="metric-label">OEE improvement</div></div>
-        <div class="metric-card"><div class="metric-val" id="m-dt">↓0%</div><div class="metric-label">Downtime reduced</div></div>
-        <div class="metric-card"><div class="metric-val" id="m-rev">₹0Cr</div><div class="metric-label">Saved per quarter</div></div>
-      </div>
-      <div class="cs-sec">
-        <h3>The problem</h3>
-        <p>Godrej Jersey's curd packaging line ran at just 44% OEE. The team was missing demand targets daily with zero visibility into why. Through user research and customer journey mapping, I identified delayed downtime classification as the root cause — ₹2.8Cr/qtr was bleeding out silently because "planned" downtimes weren't tracked for overruns.</p>
-      </div>
-      <div class="cs-sec">
-        <h3>Pareto analysis — top downtime causes</h3>
-        <div class="pareto-bar"><div class="pareto-label"><span>CIP overrun (Planned)</span><span>82%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:82%"></div></div></div>
-        <div class="pareto-bar"><div class="pareto-label"><span>Meal break overrun (Planned)</span><span>64%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:64%"></div></div></div>
-        <div class="pareto-bar"><div class="pareto-label"><span>Hot water process (Planned)</span><span>48%</span></div><div class="pareto-track"><div class="pareto-fill" style="width:48%"></div></div></div>
-        <div class="pareto-bar"><div class="pareto-label"><span>Machine setup delays (Unplanned)</span><span>28%</span></div><div class="pareto-track"><div class="pareto-fill dim" style="width:28%"></div></div></div>
-      </div>
-      <div class="cs-sec">
-        <h3>What I did</h3>
-        <ul>
-          <li>Ran user research and customer journey mapping — built business case via product analytics</li>
-          <li>Authored PRDs, user stories, and acceptance criteria using MoSCoW prioritisation</li>
-          <li>Led backlog grooming and sprint planning across Agile/Scrum cycles</li>
-          <li>Applied RCA + risk mitigation — shipped Merge & Unmerge with full audit trail</li>
-        </ul>
-      </div>
-      <div class="quote-block">
-        <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
-        — Amit Sharma, Operational Excellence Head, Godrej CDPL
-      </div>
-      <div class="cs-links">
-        <a href="https://www.notion.so/Bharath-Tej-Kaleru-Product-Manager-28252cde8518414d80e3822783596f8e" target="_blank" class="cs-link">📄 View on Notion</a>
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7396057308323045376" target="_blank" class="cs-link">🔗 LinkedIn post</a>
-      </div>
-    </div>
-
-    <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-top:2.5rem;margin-bottom:0;">Product features — shipped across all clients</div>
-    <div class="cs-tabs">
-      <button class="cs-tab active" onclick="showTab('f1',this)">Feature 1 — Bulk Data Assignment</button>
-      <button class="cs-tab" onclick="showTab('f2',this)">Feature 2 — Timeline UX Redesign</button>
-    </div>
-
-    <div class="cs-panel active" id="f1">
-      <div class="cs-title" style="font-size:18px;">Bulk Data Assignment</div>
-      <div class="cs-client">Patternlab's workflow automation platform · Shipped across all clients · Production floor operators</div>
-      <div class="metrics-row">
-        <div class="metric-card"><div class="metric-val">↓60%</div><div class="metric-label">Operator entry effort</div><div class="metric-change">Bulk vs one-by-one</div></div>
-        <div class="metric-card"><div class="metric-val">↑25%</div><div class="metric-label">OEE reporting speed</div><div class="metric-change">Faster data completion</div></div>
-        <div class="metric-card"><div class="metric-val">↓40%</div><div class="metric-label">Data corrections</div><div class="metric-change">Audit trail via Merge & Unmerge</div></div>
-      </div>
-      <div class="cs-sec">
-        <h3>The problem</h3>
-        <p>Operators were classifying downtime reasons one machine at a time — slow, repetitive, error-prone. When the same downtime applied to multiple machines, there was no way to assign it in bulk, causing data gaps that masked production losses.</p>
-      </div>
-      <div class="cs-sec">
-        <h3>Prototypes — v1 vs v2</h3>
-        <div class="figma-row">
-          <div class="figma-card">
-            <div class="figma-card-head"><span>v1 — Initial version</span><a href="https://www.figma.com/proto/c0hW33rgBgkx2XxySSFUan/Power-IQ-EMS?node-id=1-2790&t=xI8cmKwpxXeLmzej-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3527" target="_blank">Open in Figma ↗</a></div>
-            <div class="figma-card-body">Early stage OEE dashboard — before user research and client feedback iterations.</div>
-          </div>
-          <div class="figma-card" style="border-color:#c7d0f8;">
-            <div class="figma-card-head" style="border-color:#c7d0f8;"><span style="color:var(--accent);">v2 — Latest · Phase 2</span><a href="https://www.figma.com/proto/zOYHkH2Y6PuCVuDlG3Kitl/Phase--2?page-id=0%3A1&node-id=1-9755&viewport=5905%2C1980%2C0.12&t=TBQLUeLXcXCicryW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4344%3A55085" target="_blank">Open in Figma ↗</a></div>
-            <div class="figma-card-body">Improved after multiple client feedback rounds — inline forms, timeline redesign, bulk assignment.</div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-pills">
-        <span class="result-pill">Entry effort ↓60%</span>
-        <span class="result-pill">OEE speed ↑25%</span>
-        <span class="result-pill">Data corrections ↓40%</span>
-      </div>
-    </div>
-
-    <div class="cs-panel" id="f2">
-      <div class="cs-title" style="font-size:18px;">Machine Timeline UX Redesign</div>
-      <div class="cs-client">Patternlab's manufacturing operations platform · Shipped across all clients · Production floor operators</div>
-      <div class="metrics-row">
-        <div class="metric-card"><div class="metric-val">89.1 hrs</div><div class="metric-label">Saved per month</div><div class="metric-change">Operator time recovered</div></div>
-        <div class="metric-card"><div class="metric-val">↓45%</div><div class="metric-label">Data entry time</div><div class="metric-change">Per shift per operator</div></div>
-        <div class="metric-card"><div class="metric-val">↑30%</div><div class="metric-label">Data completeness</div><div class="metric-change">1.5 hrs/day saved per supervisor</div></div>
-      </div>
-      <div class="cs-sec">
-        <h3>The problem</h3>
-        <p>Operators were filling downtime reasons through fragmented popups — breaking their focus on the timeline with every entry. I identified this friction through user interviews and product analytics and raised it as a core UX problem to solve.</p>
-      </div>
-      <div class="cs-sec">
-        <h3>What I did</h3>
-        <ul>
-          <li>Identified popup friction via user interviews and product analytics</li>
-          <li>Collaborated with UI/UX team to replace popups with inline dropdown forms on the timeline</li>
-          <li>Ran client testing with real operators, gathered feedback, and iterated before full rollout</li>
-          <li>Owned GTM and change management — rollout phasing, operator training, stakeholder demos</li>
-          <li>Eliminated ~80% of QA-flagged errors post-launch</li>
-        </ul>
-      </div>
-      <div class="quote-block">
-        <p>"Bharath identified the friction operators were facing with the popup-based downtime entry and brought it to the table with clear user feedback and a strong case for change. Working closely with our UI/UX team, running client testing, and iterating based on real feedback — the team shipped a much cleaner inline timeline experience."</p>
-        — COO, Patternlab.ai
-      </div>
-      <div class="tl-pills">
-        <span class="result-pill">89.1 hrs/month saved</span>
-        <span class="result-pill">Data completeness ↑30%</span>
-        <span class="result-pill">Entry time ↓45%</span>
-        <span class="result-pill">QA errors ↓80%</span>
-      </div>
-    </div>
-
-    <!-- SCHEDULER PROJECT -->
-    <div style="margin-top:2.5rem;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">Currently building</div>
-    <div style="background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:1.75rem;">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
-        <div style="flex:1;min-width:260px;">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.85rem;">
-            <span style="font-size:11px;font-weight:600;background:#fef9c3;border:1px solid #fde68a;color:#92400e;padding:3px 10px;border-radius:3px;letter-spacing:0.06em;text-transform:uppercase;">Discovery → Fit-finding</span>
-            <span style="font-size:11px;color:#6b6b6b;">Patternlab.agents · 2026</span>
-          </div>
-          <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:0.5rem;line-height:1.35;">Scheduler — AI-enabled ERP for supply chain scheduling</h3>
-          <p style="font-size:14px;color:#3a3a3a;line-height:1.8;margin-bottom:1.25rem;">Working on an AI-enabled ERP platform focused on production scheduling and supply chain management. My role: gathering requirements directly from prospective clients, testing the product against those requirements, running demos, onboarding clients, and resolving issues as they surface. Currently validating product-market fit across three manufacturing domains — Pharma, FMCG, and Seafood — each with distinct supply chain constraints.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span class="sp">AI-Enabled ERP</span>
-            <span class="sp">Supply Chain</span>
-            <span class="sp">Production Scheduling</span>
-            <span class="sp">0→1</span>
-            <span class="sp">Cross-Industry Discovery</span>
-          </div>
-        </div>
-        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:1rem;min-width:120px;">
-          <div><div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px;">Stage</div><div style="font-size:13px;font-weight:600;color:#1a1a1a;">Discovery → Fit-finding</div></div>
-          <div><div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px;">Domains</div><div style="font-size:13px;font-weight:600;color:#1a1a1a;">Pharma · FMCG · Seafood</div></div>
-          <div><div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px;">Type</div><div style="font-size:13px;font-weight:600;color:#1a1a1a;">AI-Enabled ERP</div></div>
-        </div>
-      </div>
-
-      <div style="margin-top:1.75rem;border-top:1px solid rgba(0,0,0,0.08);padding-top:1.5rem;">
-        <div style="font-size:11px;font-weight:600;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.9rem;">How the supply chain flows, order to delivery</div>
-        <svg width="100%" viewBox="0 0 680 300" role="img" style="max-width:680px;display:block;">
-          <title>Order to delivery supply chain flow</title>
-          <desc>Eight stage flow from order planning through procurement, scheduling, manufacturing, quality check, warehousing, distribution, to delivery, with the scheduling stage highlighted as where Scheduler operates today.</desc>
-          <defs>
-            <marker id="sc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#9a9a94" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          </defs>
-          <rect x="44" y="60" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="111" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Order planning</text>
-          <text x="111" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Sales, planners</text>
-
-          <rect x="194" y="60" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="261" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Procurement</text>
-          <text x="261" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Suppliers, sourcing</text>
-
-          <rect x="344" y="60" width="135" height="56" rx="8" fill="#eff2fd" stroke="#c7d0f8" stroke-width="1"/>
-          <text x="411" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a3fa8">Scheduling</text>
-          <text x="411" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">Scheduler fits here</text>
-
-          <rect x="494" y="60" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="561" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Manufacturing</text>
-          <text x="561" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Plant, operators</text>
-
-          <line x1="179" y1="88" x2="194" y2="88" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-          <line x1="329" y1="88" x2="344" y2="88" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-          <line x1="479" y1="88" x2="494" y2="88" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-          <path d="M562 116 L562 150 L112 150 L112 180" fill="none" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-
-          <rect x="44" y="180" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="111" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Quality check</text>
-          <text x="111" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">QA, compliance</text>
-
-          <rect x="194" y="180" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="261" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Warehousing</text>
-          <text x="261" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Inventory team</text>
-
-          <rect x="344" y="180" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="411" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Distribution</text>
-          <text x="411" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Logistics, 3PL</text>
-
-          <rect x="494" y="180" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-          <text x="561" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Delivery</text>
-          <text x="561" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6b6b6b">Client, retailer</text>
-
-          <line x1="179" y1="208" x2="194" y2="208" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-          <line x1="329" y1="208" x2="344" y2="208" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-          <line x1="479" y1="208" x2="494" y2="208" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
-
-          <text x="44" y="266" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">● Blue = where Scheduler operates today</text>
-        </svg>
-        <p style="font-size:12px;color:#6b6b6b;line-height:1.7;margin-top:0.75rem;">Same eight-stage flow across domains, different pressure points: <strong style="color:#3a3a3a;">Pharma</strong> at quality check (batch traceability, regulatory sign-off) · <strong style="color:#3a3a3a;">FMCG</strong> at manufacturing and warehousing (shelf-life, demand variability) · <strong style="color:#3a3a3a;">Seafood</strong> at distribution (cold chain, spoilage risk).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- DESIGN EVOLUTION -->
-<section id="design">
-  <div class="container">
-    <div class="section-label">Product thinking</div>
-    <h2 class="section-title">Product design evolution</h2>
-    <p class="section-sub">How the product evolved from initial concept to a validated, user-tested interface based on real feedback and market analysis.</p>
-    <div class="design-grid">
-      <div class="design-card">
-        <div class="design-card-head">
-          <div class="design-card-label">Version 1 — Initial design</div>
-          <div class="design-card-title">Power IQ EMS · Early stage</div>
-        </div>
-        <div class="design-card-body">
-          <p style="margin-bottom:14px;">The first version — designed based on initial requirements before real user research and client feedback were incorporated.</p>
-          <a href="https://www.figma.com/proto/c0hW33rgBgkx2XxySSFUan/Power-IQ-EMS?node-id=1-2790&t=xI8cmKwpxXeLmzej-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3527" target="_blank" class="cs-link">View v1 in Figma ↗</a>
-        </div>
-      </div>
-      <div class="design-card">
-        <div class="design-card-head accent">
-          <div class="design-card-label accent">Version 2 — Iterated design</div>
-          <div class="design-card-title">Phase 2 · Post user feedback</div>
-        </div>
-        <div class="design-card-body">
-          <p style="margin-bottom:14px;">Redesigned after multiple rounds of user interviews, client feedback sessions, and market analysis — significantly cleaner and more intuitive.</p>
-          <a href="https://www.figma.com/proto/zOYHkH2Y6PuCVuDlG3Kitl/Phase--2?page-id=0%3A1&node-id=1-9755&viewport=5905%2C1980%2C0.12&t=TBQLUeLXcXCicryW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4344%3A55085" target="_blank" class="cs-link">View v2 in Figma ↗</a>
-        </div>
-      </div>
-    </div>
-    <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:1.25rem 1.5rem;margin-top:1rem;font-size:13px;color:#3a3a3a;line-height:1.8;">
-      <strong>My approach:</strong> I treat every UI/UX decision as a product hypothesis — validated through user interviews, usability testing, and client feedback before committing to a direction.
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- AI WORK -->
-<section id="aiwork">
-  <div class="container">
-    <div class="section-label">AI credibility</div>
-    <h2 class="section-title">AI work proof</h2>
-    <p class="section-sub">Not just listed on a resume — here's what I actually built, prompted, and evaluated using Claude / Anthropic.</p>
-    <div class="ai-grid">
-      <div class="ai-card">
-        <h3>Prompt Engineering</h3>
-        <p>Designed and iterated prompts for three AI output types — shift summary reports, downtime reason classification, and production performance narratives — using Claude (Anthropic).</p>
-        <span class="sp">Claude / Anthropic</span><span class="sp">Prompt iteration</span><span class="sp">Output shaping</span>
-      </div>
-      <div class="ai-card">
-        <h3>LLM Evals Design</h3>
-        <p>Defined eval criteria to measure AI output accuracy — compared AI-generated reports against manually written ground truth by supervisors. Iterated prompts based on failure patterns.</p>
-        <span class="sp">Ground truth comparison</span><span class="sp">Accuracy scoring</span><span class="sp">Failure analysis</span>
-      </div>
-      <div class="ai-card">
-        <h3>Before → After AI</h3>
-        <div class="before-after">
-          <div class="ba-card before"><div class="ba-label">Before</div><p>Manual shift reports. Downtime misclassified. Data gaps unflagged.</p></div>
-          <div class="ba-card after"><div class="ba-label">After</div><p>AI auto-generates summaries, classifies downtime, flags gaps in real time.</p></div>
-        </div>
-      </div>
-    </div>
-    <div class="process-row">
-      <div class="process-step"><div class="process-num">Step 1</div><div class="process-title">Define the task</div><div class="process-desc">What should AI output? What's the success criteria?</div></div>
-      <div class="process-step"><div class="process-num">Step 2</div><div class="process-title">Write & iterate prompts</div><div class="process-desc">Context, constraints, format — tested across edge cases.</div></div>
-      <div class="process-step"><div class="process-num">Step 3</div><div class="process-title">Eval vs ground truth</div><div class="process-desc">AI output vs manually written baseline. Score per output type.</div></div>
-      <div class="process-step"><div class="process-num">Step 4</div><div class="process-title">Fix failure patterns</div><div class="process-desc">Identify failures, update prompt, re-eval until threshold met.</div></div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="section-label">Toolkit</div>
-    <h2 class="section-title">Skills & tools</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><h3>AI & ML</h3><div class="skill-pills"><span class="sp">Generative AI</span><span class="sp">LLM Evals</span><span class="sp">Prompt Engineering</span><span class="sp">RAG</span><span class="sp">NLP</span><span class="sp">Predictive Analytics</span></div></div>
-      <div class="skill-card"><h3>Product</h3><div class="skill-pills"><span class="sp">PRD Writing</span><span class="sp">JTBD</span><span class="sp">North Star Metric</span><span class="sp">RICE</span><span class="sp">User Stories</span><span class="sp">A/B Testing</span><span class="sp">GTM</span></div></div>
-      <div class="skill-card"><h3>Business Analysis</h3><div class="skill-pills"><span class="sp">Requirement Gathering</span><span class="sp">BRD / FRD</span><span class="sp">Workflow Analysis</span><span class="sp">Process Mapping</span><span class="sp">Gap Analysis</span><span class="sp">Use Cases</span><span class="sp">Current / Future State Analysis</span><span class="sp">UAT</span><span class="sp">Functional Specs</span><span class="sp">Root Cause Analysis</span></div></div>
-      <div class="skill-card"><h3>Agile, Delivery & Project Coordination</h3><div class="skill-pills"><span class="sp">Scrum</span><span class="sp">Project Planning</span><span class="sp">Sprint Planning</span><span class="sp">Sprint Review</span><span class="sp">Retrospectives</span><span class="sp">Backlog Grooming</span><span class="sp">Release Management</span><span class="sp">Risk Management</span><span class="sp">Dependency Management</span><span class="sp">Resource Coordination</span><span class="sp">Issue Tracking</span><span class="sp">OKRs</span></div></div>
-      <div class="skill-card"><h3>Customer Success</h3><div class="skill-pills"><span class="sp">Customer Onboarding</span><span class="sp">Customer Adoption</span><span class="sp">Enterprise Rollout / Go-Live</span><span class="sp">Customer Retention</span><span class="sp">Customer Health Tracking</span><span class="sp">Client Training</span><span class="sp">Documentation</span><span class="sp">Quarterly Business Reviews</span><span class="sp">Escalation Management</span></div></div>
-      <div class="skill-card"><h3>Tools</h3><div class="skill-pills"><span class="sp">Figma</span><span class="sp">Jira</span><span class="sp">Amplitude</span><span class="sp">Mixpanel</span><span class="sp">Zipy</span><span class="sp">LogRocket</span><span class="sp">Notion</span><span class="sp">Zoho Sprints</span></div></div>
-      <div class="skill-card"><h3>Manufacturing & IoT</h3><div class="skill-pills"><span class="sp">MES</span><span class="sp">OEE</span><span class="sp">SCADA</span><span class="sp">ERP</span><span class="sp">IoT</span><span class="sp">Industry 4.0</span><span class="sp">Lean Manufacturing</span><span class="sp">Six Sigma</span></div></div>
-    </div>
-    <div class="cert-list">
-      <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">AI for Product Managers</div><div class="cert-issuer">Alison · CPD Certified</div><div class="cert-id">LLM Evals · Generative AI · Prompt Engineering · RAG</div><div class="cert-id">ID: 6727-57475976</div></div></div>
-      <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">Agile Project Management</div><div class="cert-issuer">Alison · CPD Certified</div><div class="cert-id">Agile · Scrum · Sprint Planning · Risk Management</div><div class="cert-id">ID: 5661-57475976</div></div></div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- LOOKING FOR -->
-<section id="looking">
-  <div class="container">
-    <div class="section-label">Next chapter</div>
-    <h2 class="section-title">Where I'd add the most value next</h2>
-    <p class="section-sub">The kind of team and problem I do my best work in.</p>
-    <div class="looking-grid">
-      <div class="looking-card"><div class="icon">🏢</div><h3>Company stage</h3><p>Large company or enterprise — where product decisions have real scale and cross-functional complexity.</p></div>
-      <div class="looking-card"><div class="icon">🧠</div><h3>Domain</h3><p>Open across AI-first products, B2B SaaS, and consumer apps — wherever there's a hard problem to dig into.</p></div>
-      <div class="looking-card"><div class="icon">⚙️</div><h3>Role type</h3><p>Product Manager, APM, AI Product, or Implementation Consultant. Comfortable both building from scratch (0→1) and scaling existing products.</p></div>
-      <div class="looking-card"><div class="icon">🤝</div><h3>Culture</h3><p>Strong engineering culture, data-driven decisions, and high ownership teams that move fast.</p></div>
-    </div>
-    <div class="looking-summary">I do my best work as a <strong>Product Manager, APM, AI Product, or Implementation Consultant</strong> at a <strong>large company or enterprise</strong> across <strong>AI, B2B SaaS, or consumer domains</strong> — working with strong engineers, backed by data, moving fast.</div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="contact-text">
-        <div class="section-label">Let's talk</div>
-        <h2 class="section-title" style="margin-bottom:0.75rem;">Get in touch</h2>
-        <p>Always glad to connect on product, manufacturing tech, or AI. Feel free to reach out — I respond within 24 hours.</p>
-      </div>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/bharath-tej-76b26323b" target="_blank" class="contact-link">
-          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-5 6h-2.5v2h2v6h2.5v-6h2l.3-2h-2.3V8c0-.5.2-.8.8-.8h1.5V5h-2c-2 0-2.8 1-2.8 3v1z"/></svg>
-          Connect on LinkedIn <span>linkedin.com/in/bharath-tej</span>
-        </a>
-        <a href="tel:+919121565048" class="contact-link">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 0 0 .18 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +91 91215 65048 <span>Call or WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>Bharath Tej Kaleru · Product Manager · Hyderabad · 2026</footer>
-
-<!-- PM BOT -->
-<div id="pm-bot-btn" onclick="toggleBot()" style="position:fixed;bottom:28px;right:28px;z-index:999;width:52px;height:52px;background:#1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.18);">
-  <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
 </div>
 
-<div id="pm-bot-window" style="display:none;position:fixed;bottom:90px;right:28px;z-index:999;width:360px;height:520px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.15);flex-direction:column;overflow:hidden;">
-  <div style="background:#1a1a1a;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:32px;height:32px;background:#2d5be3;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      </div>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:#fff;">PM Bot</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);">Ask me about Bharath</div>
-      </div>
-    </div>
-    <button onclick="toggleBot()" style="background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1;padding:0;">✕</button>
-  </div>
-  <div id="pm-bot-messages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:#f9f9f7;">
-    <div style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:12px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;">
-      👋 Hi! I'm PM Bot — I know everything about Bharath's experience, projects, and skills. Ask me anything!
-      <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;">
-        <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">What has Bharath shipped?</button>
-        <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">What's his customer success experience?</button>
-        <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">Is he open to new roles?</button>
-      </div>
-    </div>
-  </div>
-  <div style="padding:12px 14px;border-top:1px solid rgba(0,0,0,0.07);background:#fff;display:flex;gap:8px;align-items:flex-end;">
-    <textarea id="pm-bot-input" placeholder="Ask anything about Bharath..." onkeydown="handleBotKey(event)" style="flex:1;border:1px solid rgba(0,0,0,0.12);border-radius:8px;padding:9px 12px;font-size:13px;font-family:'Inter',sans-serif;resize:none;outline:none;line-height:1.5;max-height:100px;overflow-y:auto;" rows="1"></textarea>
-    <button onclick="sendBotMessage()" style="background:#1a1a1a;border:none;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-    </button>
+<div class="page">
+  <h1 class="name">Bharath Tej Kaleru</h1>
+  <div class="tagline">Product Manager | Enterprise SaaS | AI Products | Manufacturing Technology</div>
+  <div class="contact">Hyderabad, India | Open to Hyderabad, Bangalore, and Remote</div>
+  <div class="contact">Phone: +91 91215 65048 | Email: ktej0313@gmail.com</div>
+  <div class="contact">LinkedIn: <a href="https://linkedin.com/in/bharath-tej-76b26323b">linkedin.com/in/bharath-tej-76b26323b</a> | Portfolio: <a href="https://bharathtej.vercel.app">bharathtej.vercel.app</a></div>
+
+  <h2 class="section">Professional Summary</h2>
+  <p class="summary">3+ years of experience across Product Management, Business Analysis, an enterprise SaaS platform for manufacturing operations, Industrial Automation, and AI Product Development. Began my career in industrial automation, building a deep understanding of manufacturing operations and customer workflows, then transitioned into a Business Analyst role gathering requirements, managing backlogs, and coordinating Agile delivery, before taking ownership of product discovery, roadmap prioritization, and AI-enabled feature delivery as Product Manager. Partners with plant managers, operators, engineering, and design to reduce production losses and improve OEE, and designs AI-powered product experiences using the Claude API, prompt engineering, and LLM evaluation.</p>
+
+  <h2 class="section">Core Skills</h2>
+  <div class="skill-line"><b>Product Management:</b> Discovery and Customer Research, Roadmap Prioritization and Strategy, PRDs and User Stories, Sprint Planning and Backlog Management, Stakeholder Management</div>
+  <div class="skill-line"><b>Business Analysis:</b> Requirements Gathering and Workflow Analysis, Functional Requirements and Acceptance Criteria, UAT and Release Validation, Process Documentation</div>
+  <div class="skill-line"><b>Analytics and AI:</b> OEE and Product Analytics (Zipy, LogRocket, SQL), Claude API and Prompt Engineering, LLM Evaluation and Generative AI Feature Design</div>
+  <div class="skill-line"><b>Domains and Tools:</b> Enterprise B2B SaaS, Enterprise SaaS Platform for Manufacturing Operations, Enterprise Workflow Automation and Operational Analytics, Jira, Zoho Sprints, Confluence, Figma, Notion, SQL</div>
+
+  <h2 class="section">Professional Experience</h2>
+
+  <div class="role-head"><span class="role-title">Product Manager — Patternlab.agents</span><span class="role-dates">January 2026 – Present</span></div>
+  <div class="role-intro">Own the end-to-end product lifecycle for an enterprise SaaS platform for manufacturing operations, used across multiple manufacturing plants, driving discovery, prioritization, Agile delivery, customer adoption, and AI-enabled product innovation.</div>
+
+  <div class="subhead">Product Strategy and Discovery</div>
+  <ul class="bullets"><li>Own product vision, roadmap, and feature prioritization; lead discovery through shop-floor observations, customer interviews, JTBD analysis, and user journey mapping.</li></ul>
+
+  <div class="subhead">Product Delivery and Analytics</div>
+  <ul class="bullets">
+    <li>Own backlog and acceptance criteria; manage sprint planning and cross-functional coordination across engineering and QA to ship end-to-end feature releases.</li>
+    <li>Use Zipy and LogRocket session analytics to track feature adoption and customer feedback, informing continuous product iteration.</li>
+  </ul>
+
+  <div class="subhead">AI Product Development</div>
+  <ul class="bullets"><li>Design prompts and evaluation criteria for AI features, including shift summaries and downtime classification, using the Claude API and LLM evaluation.</li></ul>
+
+  <div class="win-title">Selected Win: Bulk Downtime Assignment, Enterprise Workflow Optimization</div>
+  <div class="win-body">Collapsed a multi-step, per-shift downtime entry process into a single action after validating the problem through operator interviews and session analytics.</div>
+  <div class="win-impact">Impact: 60 percent reduction in operator effort, 40 percent fewer supervisor corrections, 1.5 hours per day saved, and became the standard onboarding workflow.</div>
+
+  <div class="win-title">Selected Win: Machine Timeline Redesign, Operator Workflow Experience</div>
+  <div class="win-body">Replaced fragmented popup UI with inline interactions to stop operators skipping downtime entries, balancing efficiency with data traceability.</div>
+  <div class="win-impact">Impact: 45 percent faster entry time, 30 percent more complete data, 80 percent fewer QA errors, 89.1 hours per month saved, and adopted as the baseline UX standard.</div>
+
+  <div class="role-head"><span class="role-title">Business Analyst — Gowell Communications</span><span class="role-dates">June 2024 – December 2025</span></div>
+  <div class="role-intro">Served as the bridge between customers, engineering, and product teams on an enterprise SaaS platform for manufacturing operations, analyzing manufacturing workflows, gathering requirements, and supporting delivery ahead of promotion to Product Manager.</div>
+
+  <div class="subhead">Requirements, Agile Delivery, and Stakeholder Management</div>
+  <ul class="bullets">
+    <li>Gathered business requirements from enterprise customers and conducted workflow analysis to identify operational challenges, converting findings into functional requirements, user stories, and acceptance criteria.</li>
+    <li>Managed backlog refinement and sprint planning, conducted UAT, and coordinated release validation and deployment planning across shifting priorities and dependencies.</li>
+    <li>Partnered with Production Managers, Plant Managers, Operators, CEOs, Engineering, QA, and UI/UX teams to align delivery with business needs.</li>
+  </ul>
+
+  <div class="subhead">Customer Success and Delivery Coordination</div>
+  <ul class="bullets">
+    <li>Led customer onboarding, product implementation, demonstrations, and user training; collected feedback and ran quarterly improvement reviews and post-go-live support.</li>
+    <li>Ran daily stand-ups, sprint reviews, and retrospectives; tracked delivery in Jira and Zoho Sprints, including story points, sprint burndown, and team performance reporting.</li>
+  </ul>
+
+  <div class="role-head"><span class="role-title">Industrial Automation and Product Associate — Nitro Network</span><span class="role-dates">July 2023 – May 2024</span></div>
+  <div class="role-intro">Started my career in industrial automation, working on IoT-based manufacturing solutions and collaborating with engineering and product teams to understand workflows, validate features, and improve usability based on customer feedback.</div>
+  <ul class="bullets">
+    <li>Tested IoT-enabled industrial automation solutions and participated in product discussions to understand business use cases.</li>
+    <li>Gathered customer and internal stakeholder feedback; supported feature validation and product testing, documenting observations and suggested usability improvements.</li>
+    <li>Built a foundational understanding of manufacturing processes, enterprise workflow automation and operational analytics, and machine connectivity that continues to inform current product decisions.</li>
+  </ul>
+
+  <h2 class="section">AI Product Portfolio</h2>
+  <div class="subhead">AI-Powered Portfolio Assistant (Claude API), 2025 – Present</div>
+  <ul class="bullets"><li>Designed conversation flows, prompt strategy, and evaluation criteria for a recruiter-facing AI assistant deployed via Vercel, focused on response quality and guardrails.</li></ul>
+  <div class="subhead">AI Features in Production, Patternlab.agents</div>
+  <ul class="bullets"><li>Designed prompts and LLM evaluation criteria for AI-generated shift summaries and downtime classification, validated against manually written ground truth.</li></ul>
+
+  <h2 class="section">Key Achievements</h2>
+  <ul class="bullets">
+    <li>Contributed to an estimated 2.8 crore rupees per quarter in recovered revenue by redesigning downtime reporting workflows, cutting unplanned downtime from 3.35 to 0.38 hours per day across one plant, one line, and eight machines.</li>
+    <li>Led 24 or more enterprise implementations across 8 or more manufacturing plants, consistently meeting go-live timelines under one week.</li>
+    <li>Conducted 25 or more product demonstrations supporting 6 enterprise customer conversions.</li>
+  </ul>
+
+  <h2 class="section">Education</h2>
+  <div class="edu-cert">Bachelor of Engineering, Electronics and Communication Engineering — Vidya Jyothi Institute of Technology, Hyderabad (2019 – 2023), CGPA: 7.9</div>
+
+  <h2 class="section">Certifications</h2>
+  <div class="edu-cert">
+    • AI for Product Managers — Alison, CPD Certified (Generative AI, LLM Evaluations, Prompt Engineering, AI Feature Roadmapping)<br>
+    • Agile Project Management — Alison, CPD Certified (Agile, Scrum, Sprint Planning, Release Management)
   </div>
 </div>
 
-<script>
-function showTab(id, btn) {
-  document.querySelectorAll('.cs-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.cs-tab').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
-
-const DURATION = 1500;
-function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-function animateCount(el, to, duration, format) {
-  const start = performance.now();
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    el.textContent = format(to * easeOut(progress));
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-let animated = false;
-function runOEEAnimation() {
-  if (animated) return;
-  animated = true;
-  setTimeout(() => animateCount(document.getElementById('m-oee'), 85, DURATION, v => Math.round(v) + '%'), 100);
-  setTimeout(() => animateCount(document.getElementById('m-dt'), 91, DURATION, v => '↓' + Math.round(v) + '%'), 300);
-  setTimeout(() => animateCount(document.getElementById('m-rev'), 2.8, DURATION, v => '₹' + v.toFixed(1) + 'Cr'), 500);
-}
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) runOEEAnimation();
-}, { threshold: 0.1 });
-const target = document.getElementById('oee-metrics');
-if (target) observer.observe(target);
-
-const RESPONSES = {
-  experience: `Bharath has 3.5+ years of experience: he started in IoT/industrial automation at Nitro Network (2023), moved to Go Well Communications as a Business Analyst (Jun 2024–Dec 2025) staffed full-time on Patternlab's manufacturing operations platform, and was then hired directly by Patternlab.agents as Product Manager (Jan 2026–present) based on his delivery track record on that same product.`,
-  impact: `Bharath's biggest impact:\n\n• ₹2.8 Crore/quarter recovered for Godrej Jersey — OEE 44%→85%, downtime ↓91%\n• 24+ enterprise implementations — avg go-live under 1 week\n• 25+ product demos — contributed to 6 new customer conversions\n• 50+ users onboarded across 8+ manufacturing plants`,
-  shipped: `Bharath shipped:\n\n1. Bulk Data Assignment — operator effort ↓60%, OEE speed ↑25%\n2. Machine Timeline UX Redesign — 89.1 hrs/month saved, data completeness ↑30%\n\nHe also led the Godrej Jersey OEE case study recovering ₹2.8Cr/quarter.`,
-  skills: `Bharath's skills span Product, Business Analysis, Agile Delivery, and Customer Success:\n\nProduct: AI PM, LLM Evals, Prompt Engineering, PRD Writing, JTBD, RICE\nBusiness Analysis: Requirement Gathering, BRD/FRD, Workflow Analysis, Gap Analysis, UAT\nAgile & Delivery: Scrum, Sprint Planning, Release Management, Risk Management\nCustomer Success: Customer Onboarding, Adoption, Retention, Go-Live Management`,
-  tools: `Bharath uses:\n\nAnalytics: Amplitude, Mixpanel, Zipy, LogRocket\nPM Tools: Figma, Jira, Confluence, Notion, Zoho Sprints\nDomain: OEE, SCADA, ERP, IoT, Industry 4.0, Manufacturing Operations Platforms`,
-  open: `Bharath is interested in Product Manager, APM, AI Product, and Implementation Consultant roles — based in Hyderabad, open to Bangalore and Remote.`,
-  contact: `Reach Bharath at:\n• LinkedIn: linkedin.com/in/bharath-tej-76b26323b\n• Phone: +91 91215 65048\n• Email: Ktej0313@gmail.com`,
-  education: `Bharath holds a B.E. in Electronics & Communication Engineering from VJIT, Hyderabad — graduated 2023, CGPA 7.9.`,
-  certifications: `Two CPD certified courses from Alison:\n1. AI for Product Managers — LLM Evals, Generative AI, Prompt Engineering, RAG\n2. Agile Project Management — Scrum, Sprint Planning, Risk Management`,
-  ai: `Bharath uses Claude (Anthropic) to generate shift summaries, classify downtime reasons, and create production narratives. He designs LLM eval criteria comparing AI output vs manually written ground truth.`,
-  current: `Bharath is working on Scheduler — an AI-enabled ERP platform for production scheduling and supply chain management. His role: gathering requirements from prospective clients, testing the product against them, running demos, onboarding clients, and resolving issues. Currently validating product-market fit across Pharma, FMCG, and Seafood manufacturing domains.`,
-  background: `Bharath started in IoT testing and industrial automation at Nitro Network. He then worked as a Business Analyst at Go Well Communications, staffed on Patternlab's manufacturing operations platform, before Patternlab.agents hired him directly as Product Manager.`,
-  company: `Bharath is a Product Manager at Patternlab.agents — a B2B SaaS company building an enterprise workflow automation platform for plant managers and shop-floor operators to track OEE, downtime, and production data. He joined as PM in Jan 2026, after 1.5 years as a Business Analyst staffed on the same product via Go Well Communications.`,
-  godrej: `The Godrej Jersey case study improved OEE from 44% to 85% on a curd packaging line (1 plant, 8 machines). Bharath delivered this as a Business Analyst staffed on Patternlab's manufacturing operations platform. Using Pareto Analysis and RCA, he identified planned downtime overruns as the root cause, recovering ₹2.8Cr/quarter. Featured on Patternlab.ai LinkedIn.`,
-  customersuccess: `Bharath's Customer Success experience, delivered as Business Analyst staffed on Patternlab's manufacturing operations platform (2024–2025):\n\n• 24+ enterprise implementations — avg go-live under 1 week\n• 50+ users onboarded via live sessions, videos & docs\n• 25+ product demos — 6 new customer conversions\n• 8+ manufacturing plants managed\n• 2–5 critical escalations resolved/month\n• Used Zipy & LogRocket for behavioral analytics\n• Voice of Customer in sprint reviews and roadmap discussions`,
-  onboarding: `Bharath led end-to-end onboarding — kickoff meetings, credential provisioning, implementation planning, go-live coordination, and post-launch support — achieving avg go-live under 1 week across 24+ enterprise clients.`,
-  demos: `Bharath delivered 25+ product demos to C-suite and plant-level stakeholders (CEOs, CFOs, Plant Managers) — contributing to 6 new customer conversions.`,
-  retention: `Bharath managed renewals proactively — identifying churn risks and addressing them through tailored success plans and executive engagement across 8+ manufacturing plants.`,
-  voc: `Bharath acted as Voice of the Customer — gathering requirements, translating to User Stories, and collaborating with Product, Engineering, QA teams. His biggest VoC win was identifying Machine Timeline usability issues through JTBD analysis, leading to a redesign that reduced user effort by 60%.`,
-  default: `I'm PM Bot — ask me anything about Bharath! Try:\n\n• What has Bharath shipped?\n• Tell me about his customer success experience?\n• What's his biggest impact?\n• What skills does he have?\n• Is he open to new roles?\n• Tell me about the Godrej case study`
-};
-
-function getBotResponse(q) {
-  q = q.toLowerCase();
-  if (q.match(/experience|years|career|history/)) return RESPONSES.experience;
-  if (q.match(/impact|result|revenue|achieve|crore|oee|downtime|biggest|win/)) return RESPONSES.impact;
-  if (q.match(/ship|built|product|feature|launch|deliver/)) return RESPONSES.shipped;
-  if (q.match(/skill|good at|expert|competenc|strength/)) return RESPONSES.skills;
-  if (q.match(/tool|software|figma|jira|notion|amplitude|zipy|logrocket/)) return RESPONSES.tools;
-  if (q.match(/open|looking|available|hire|job|role|opportun|remote|bangalore/)) return RESPONSES.open;
-  if (q.match(/contact|reach|email|phone|linkedin|connect/)) return RESPONSES.contact;
-  if (q.match(/educat|degree|college|vjit|engineer/)) return RESPONSES.education;
-  if (q.match(/certif|course|alison|agile|scrum/)) return RESPONSES.certifications;
-  if (q.match(/ai|claude|llm|prompt|machine learn|eval/)) return RESPONSES.ai;
-  if (q.match(/current|building|now|supply chain|planning|discovery/)) return RESPONSES.current;
-  if (q.match(/iot|hardware|nitro|start|begin/)) return RESPONSES.background;
-  if (q.match(/company|patternlab|where work|employer/)) return RESPONSES.company;
-  if (q.match(/godrej|jersey|case study|pareto|dairy|fmcg/)) return RESPONSES.godrej;
-  if (q.match(/customer success|cs|account|retention|churn|renewal|lifecycle|adoption/)) return RESPONSES.customersuccess;
-  if (q.match(/onboard|implement|go.live|kickoff/)) return RESPONSES.onboarding;
-  if (q.match(/demo|presentation|pitch|convert/)) return RESPONSES.demos;
-  if (q.match(/retain|renew|churn|risk/)) return RESPONSES.retention;
-  if (q.match(/voice|voc|customer feedback|pain point/)) return RESPONSES.voc;
-  return RESPONSES.default;
-}
-
-let botOpen = false;
-function toggleBot() {
-  const win = document.getElementById('pm-bot-window');
-  botOpen = !botOpen;
-  win.style.display = botOpen ? 'flex' : 'none';
-  if (botOpen) document.getElementById('pm-bot-input').focus();
-}
-function handleBotKey(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendBotMessage(); }
-}
-function sendSuggestion(btn) {
-  document.getElementById('pm-bot-input').value = btn.textContent;
-  sendBotMessage();
-}
-function appendMessage(text, isUser) {
-  const msgs = document.getElementById('pm-bot-messages');
-  const div = document.createElement('div');
-  div.style.cssText = isUser
-    ? 'background:#1a1a1a;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;white-space:pre-line;'
-    : 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#1a1a1a;line-height:1.6;max-width:85%;white-space:pre-line;';
-  div.textContent = text;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-function sendBotMessage() {
-  const input = document.getElementById('pm-bot-input');
-  const text = input.value.trim();
-  if (!text) return;
-  input.value = '';
-  appendMessage(text, true);
-  const typing = document.createElement('div');
-  typing.id = 'typing';
-  typing.style.cssText = 'background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:#6b6b6b;max-width:85%;';
-  typing.textContent = 'Typing…';
-  document.getElementById('pm-bot-messages').appendChild(typing);
-  document.getElementById('pm-bot-messages').scrollTop = 999999;
-  setTimeout(() => {
-    typing.remove();
-    appendMessage(getBotResponse(text), false);
-  }, 700);
-}
-</script>
 </body>
 </html>
