@@ -224,7 +224,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
     <p class="hero-statement">"I earned my way into product — from testing IoT hardware, to analyzing manufacturing workflows as a Business Analyst, to owning the roadmap as PM. Along the way I helped recover ₹2.8Cr/quarter in verified client revenue by solving the operational problems behind the data."</p>
     <div class="hero-ctas">
       <a href="#casestudy" class="btn-primary">View my work</a>
-      <a href="./resume.pdf" download class="btn-outline">
+      <a id="resume-download-btn" href="./resume.html" target="_blank" class="btn-outline">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Resume
       </a>
@@ -800,6 +800,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">What has Bharath shipped?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">What's his customer success experience?</button>
         <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">Is he open to new roles?</button>
+        <button onclick="sendSuggestion(this)" style="background:#f0efe9;border:1px solid rgba(0,0,0,0.09);border-radius:6px;padding:6px 10px;font-size:12px;color:#1a1a1a;cursor:pointer;text-align:left;">📄 Download his resume</button>
       </div>
     </div>
   </div>
@@ -852,6 +853,7 @@ const RESPONSES = {
   tools: `Bharath uses:\n\nAnalytics: Amplitude, Mixpanel, Zipy, LogRocket\nPM Tools: Figma, Jira, Confluence, Notion, Zoho Sprints\nDomain: OEE, SCADA, ERP, IoT, Industry 4.0, Manufacturing Operations Platforms`,
   open: `Bharath is interested in Product Manager, APM, AI Product, and Implementation Consultant roles — based in Hyderabad, open to Bangalore and Remote.`,
   contact: `Reach Bharath at:\n• LinkedIn: linkedin.com/in/bharath-tej-76b26323b\n• Phone: +91 91215 65048\n• Email: Ktej0313@gmail.com`,
+  resume: `Opening Bharath's resume now — use the "Save as PDF / Print" button on that page to download it.`,
   education: `Bharath holds a B.E. in Electronics & Communication Engineering from VJIT, Hyderabad — graduated 2023, CGPA 7.9.`,
   certifications: `Two CPD certified courses from Alison:\n1. AI for Product Managers — LLM Evals, Generative AI, Prompt Engineering, RAG\n2. Agile Project Management — Scrum, Sprint Planning, Risk Management`,
   ai: `Bharath uses Claude (Anthropic) to generate shift summaries, classify downtime reasons, and create production narratives. He designs LLM eval criteria comparing AI output vs manually written ground truth.`,
@@ -875,6 +877,7 @@ function getBotResponse(q) {
   if (q.match(/skill|good at|expert|competenc|strength/)) return RESPONSES.skills;
   if (q.match(/tool|software|figma|jira|notion|amplitude|zipy|logrocket/)) return RESPONSES.tools;
   if (q.match(/open|looking|available|hire|job|role|opportun|remote|bangalore/)) return RESPONSES.open;
+  if (q.match(/resume|cv\b|download.*bio/)) return RESPONSES.resume;
   if (q.match(/contact|reach|email|phone|linkedin|connect/)) return RESPONSES.contact;
   if (q.match(/educat|degree|college|vjit|engineer/)) return RESPONSES.education;
   if (q.match(/certif|course|alison|agile|scrum/)) return RESPONSES.certifications;
@@ -929,7 +932,12 @@ function sendBotMessage() {
   document.getElementById('pm-bot-messages').scrollTop = 999999;
   setTimeout(() => {
     typing.remove();
-    appendMessage(getBotResponse(text), false);
+    const replyText = getBotResponse(text);
+    appendMessage(replyText, false);
+    if (/resume|cv\b|download.*bio/i.test(text)) {
+      const link = document.getElementById('resume-download-btn');
+      if (link) link.click();
+    }
   }, 700);
 }
 </script>
