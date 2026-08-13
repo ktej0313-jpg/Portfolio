@@ -100,6 +100,14 @@ section { padding: 5rem 0; }
 .cs-card ul li { font-size: 13px; color: #3a3a3a; line-height: 1.7; padding-left: 1rem; position: relative; margin-bottom: 4px; }
 .cs-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
 
+/* PRODUCT THINKING */
+.think-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2rem; }
+.think-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; }
+.think-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 0.6rem; }
+.think-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+.think-desc { font-size: 13px; color: #3a3a3a; line-height: 1.7; margin-bottom: 0.75rem; }
+.think-proof { display: inline-block; font-size: 11px; font-weight: 600; color: var(--green); background: #f0fdf4; border: 1px solid #bbf7d0; padding: 3px 9px; border-radius: 3px; }
+
 /* CASE STUDY */
 .cs-header { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 2rem; margin-top: 2rem; }
 .cs-badge { display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0; color: var(--green); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 3px; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
@@ -229,6 +237,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#thinking">Thinking</a></li>
       <li><a href="#casestudy">Work</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#aiwork">AI</a></li>
@@ -280,9 +289,9 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
       <div>
         <div class="about-text">
           <p>I started hands-on with hardware — IoT testing and industrial automation at Nitro Network — before making the move toward product. That technical grounding shapes how I think: I ask the "why" behind every user problem and the "how" behind every build decision.</p>
-          <p>From there, I moved into Product Management at Patternlab.agents, where I've owned the end-to-end product lifecycle for an enterprise SaaS platform for manufacturing operations since May 2024 — leading discovery, roadmap planning, backlog prioritization, and Agile delivery for clients like Godrej Jersey. That work is where the Godrej OEE case study and both shipped product features came from.</p>
+          <p>From there, I moved into Product Management at Patternlab.agents, where I've owned the end-to-end product lifecycle for Factory Intelligence — an enterprise SaaS platform for manufacturing operations — since May 2024, leading discovery, roadmap planning, backlog prioritization, and Agile delivery for clients like Godrej Jersey. That work is where the Godrej OEE case study and both shipped product features came from.</p>
           <p>I'm AI-certified in LLM Evals, Prompt Engineering, and Generative AI — and I apply these hands-on in the products I build, not just as lines on a resume.</p>
-          <p>What travels with me isn't a domain — it's a process: find the metric the customer actually cares about, validate before building, and make the trade-off explicit when speed and accuracy conflict. That process happens to be proven in operational intelligence and supply chain right now (OEE and downtime intelligence, and Scheduler, the supply chain ERP I'm building), but it's the same process I'd bring to any category.</p>
+          <p>What travels with me isn't a domain — it's a process: find the metric the customer actually cares about, validate before building, and make the trade-off explicit when speed and accuracy conflict. That process is what took Factory Intelligence from an energy-monitoring MVP to a stable OEE and downtime platform — and it's the same process behind Master Scheduler, the supply chain product I'm building now, which sits one layer upstream of Factory Intelligence in the same value chain.</p>
           <p style="color:#6b6b6b;font-size:14px;">Outside of work, I'm usually planning my next trip — I love traveling to new places.</p>
         </div>
       </div>
@@ -435,7 +444,50 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
       </div>
       <div class="quote-block" style="margin-top:1.5rem;margin-bottom:0;">
         <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
-        — Amit Sharma, Operational Excellence Head, Godrej CDPL
+        <cite>— Amit Sharma, Operational Excellence Head, Godrej CDPL</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRODUCT THINKING -->
+<section id="thinking">
+  <div class="container">
+    <div class="section-label">How I approach problems</div>
+    <h2 class="section-title">Product thinking</h2>
+    <p class="section-sub">Five patterns that show up across everything I've built — worth knowing before the case studies that follow, which are where each one actually played out.</p>
+    <div class="think-grid">
+      <div class="think-card">
+        <div class="think-num">01</div>
+        <div class="think-title">Find the metric that matters, not the one that's easy to measure</div>
+        <div class="think-desc">The easiest thing to instrument is rarely what the customer is actually optimizing for. Worth the extra discovery time to find out which one it really is before building around it.</div>
+        <span class="think-proof">Proof: Godrej Jersey — energy vs. OEE</span>
+      </div>
+      <div class="think-card">
+        <div class="think-num">02</div>
+        <div class="think-title">Validate before you build, even if it delays the build</div>
+        <div class="think-desc">A slower start beats a fast build in the wrong direction. Real usage data and direct conversations come before committing to a fix, not after.</div>
+        <span class="think-proof">Proof: 6–8 month OEE pilot before the fix</span>
+      </div>
+      <div class="think-card">
+        <div class="think-num">03</div>
+        <div class="think-title">When speed and accuracy conflict, protect what the product exists to report</div>
+        <div class="think-desc">The faster feature to build isn't automatically the right one, especially when it risks quietly corrupting the exact metric the tool is supposed to deliver.</div>
+        <span class="think-proof">Proof: Bulk Assignment — rejected time-range selection</span>
+      </div>
+      <div class="think-card">
+        <div class="think-num">04</div>
+        <div class="think-title">Match the interface to the user's existing mental model, not the industry default</div>
+        <div class="think-desc">The modern, feature-rich option isn't always the right call. Sometimes the better product looks like what your users already trust, not what looks impressive in a demo.</div>
+        <span class="think-proof">Proof: Timeline Redesign — paper logbook format</span>
+      </div>
+      <div class="think-card">
+        <div class="think-num">05</div>
+        <div class="think-title">Insight has no value until someone acts on it</div>
+        <div class="think-desc">A dashboard nobody opens doesn't move a number. Getting the right data in front of the right person, in the format they'll actually use, is part of the product — not an afterthought.</div>
+        <span class="think-proof">Proof: Automated WhatsApp/email insight delivery</span>
       </div>
     </div>
   </div>
@@ -483,7 +535,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
     <div class="cs-header">
       <div class="cs-badge">✓ Client verified · Featured on Patternlab.ai LinkedIn</div>
       <div class="cs-title">OEE Improvement — Godrej Jersey</div>
-      <div class="cs-client">FMCG / Dairy · Curd Packaging Line · Ramantapur, Hyderabad · 1 plant · 8 machines · Delivered as Product Manager at Patternlab.agents</div>
+      <div class="cs-client">FMCG / Dairy · Curd Packaging Line · Ramantapur, Hyderabad · 1 plant · 8 machines · Delivered on Factory Intelligence as Product Manager at Patternlab.agents</div>
       <div class="metrics-row" id="oee-metrics">
         <div class="metric-card"><div class="metric-val" id="m-oee">0%</div><div class="metric-label">OEE improvement</div></div>
         <div class="metric-card"><div class="metric-val" id="m-dt">↓0%</div><div class="metric-label">Downtime reduced</div></div>
@@ -495,8 +547,8 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
       </div>
       <div class="cs-sec" style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:1.25rem 1.5rem;">
         <h3 style="border-bottom:1px solid #fde68a;">Alternatives considered: energy vs. OEE</h3>
-        <p>The initial plan was to monitor and reduce per-machine energy consumption — an intuitive starting point for a manufacturing plant. But early client feedback told a different story: in FMCG, production capacity is the capital that matters, not the energy bill. Energy monitoring also would have required a sensor on every machine — a large hardware investment with a slow, uncertain ROI that made the customer hesitant to commit further.</p>
-        <p style="margin-top:0.6rem;">I made the call to re-scope the product around OEE instead: a metric that needed minimal additional hardware, was directly output-oriented, and mapped to what the customer was actually trying to optimize — line efficiency and capacity, not utility costs.</p>
+        <p>The product started as an energy-monitoring tool — an intuitive starting point for a manufacturing plant. But it didn't scale. Energy losses aren't a recurring problem: fix the leak once and it doesn't come back, which makes for a one-time engagement, not an ongoing product. Clients were asking "how much will you save this year," a question with a ceiling. For plants where energy was only 3-4% of monthly revenue burn, the whole use case just wasn't important enough to prioritize.</p>
+        <p style="margin-top:0.6rem;">Production and process optimization was the opposite: dozens of recurring opportunities, each one solvable and each one worth ROI, and every time the process improved, a new opportunity appeared behind it. I made the call to re-scope the core product around OEE — but we didn't throw away the energy-monitoring work. We kept it as a module for the clients where energy genuinely is a bottleneck, and combined both into a single product: Factory Intelligence.</p>
       </div>
       <div class="cs-sec">
         <h3>Discovery</h3>
@@ -524,7 +576,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
       </div>
       <div class="quote-block">
         <p>"PatternLab's team built a non-con system with increased visibility of the factory floor, helping us with decision making on production planning and shift planning, helping us with ROI realization in a short period of time."</p>
-        — Amit Sharma, Operational Excellence Head, Godrej CDPL
+        <cite>— Amit Sharma, Operational Excellence Head, Godrej CDPL</cite>
       </div>
       <div class="cs-links">
         <a href="https://www.notion.so/Bharath-Tej-Kaleru-Product-Manager-28252cde8518414d80e3822783596f8e" target="_blank" class="cs-link">📄 View on Notion</a>
@@ -540,7 +592,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
 
     <div class="cs-panel active" id="f1">
       <div class="cs-title" style="font-size:18px;">Bulk Data Assignment</div>
-      <div class="cs-client">Patternlab's workflow automation platform · Shipped across all clients · Production floor operators</div>
+      <div class="cs-client">Factory Intelligence, Patternlab's manufacturing operations platform · Shipped across all clients · Production floor operators</div>
       <div class="metrics-row">
         <div class="metric-card"><div class="metric-val">↓60%</div><div class="metric-label">Operator entry effort</div><div class="metric-change">Bulk vs one-by-one</div></div>
         <div class="metric-card"><div class="metric-val">↑25%</div><div class="metric-label">OEE reporting speed</div><div class="metric-change">Faster data completion</div></div>
@@ -590,7 +642,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
 
     <div class="cs-panel" id="f2">
       <div class="cs-title" style="font-size:18px;">Machine Timeline UX Redesign</div>
-      <div class="cs-client">Patternlab's manufacturing operations platform · Shipped across all clients · Production floor operators</div>
+      <div class="cs-client">Factory Intelligence, Patternlab's manufacturing operations platform · Shipped across all clients · Production floor operators</div>
       <div class="metrics-row">
         <div class="metric-card"><div class="metric-val">89.1 hrs</div><div class="metric-label">Saved per month</div><div class="metric-change">Operator time recovered</div></div>
         <div class="metric-card"><div class="metric-val">↓45%</div><div class="metric-label">Data entry time</div><div class="metric-change">Per shift per operator</div></div>
@@ -623,7 +675,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
       </div>
       <div class="quote-block">
         <p>"Bharath identified the friction operators were facing with the popup-based downtime entry and brought it to the table with clear user feedback and a strong case for change. Working closely with our UI/UX team, running client testing, and iterating based on real feedback — the team shipped a much cleaner inline timeline experience."</p>
-        — COO, Patternlab.ai
+        <cite>— COO, Patternlab.ai</cite>
       </div>
       <div class="tl-pills">
         <span class="result-pill">89.1 hrs/month saved</span>
@@ -643,8 +695,8 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
             <span style="font-size:11px;font-weight:600;background:#fef9c3;border:1px solid #fde68a;color:#92400e;padding:3px 10px;border-radius:3px;letter-spacing:0.06em;text-transform:uppercase;">Discovery → Fit-finding</span>
             <span style="font-size:11px;color:#6b6b6b;">Patternlab.agents · 2026</span>
           </div>
-          <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:0.5rem;line-height:1.35;">Scheduler — AI-enabled ERP for supply chain scheduling</h3>
-          <p style="font-size:14px;color:#3a3a3a;line-height:1.8;margin-bottom:1.25rem;">Working on an AI-enabled ERP platform focused on production scheduling and supply chain management. My role: gathering requirements directly from prospective clients, testing the product against those requirements, running demos, onboarding clients, and resolving issues as they surface. Currently validating product-market fit across three manufacturing domains — Pharma, FMCG, and Seafood — each with distinct supply chain constraints.</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:0.5rem;line-height:1.35;">Master Scheduler — AI-enabled ERP for supply chain scheduling</h3>
+          <p style="font-size:14px;color:#3a3a3a;line-height:1.8;margin-bottom:1.25rem;">Working on an AI-enabled ERP platform focused on production scheduling and supply chain management — the layer that sits directly upstream of Factory Intelligence in the same value chain. Factory Intelligence tells a plant what's happening on the floor right now; Master Scheduler decides what should happen next, before it does. My role: gathering requirements directly from prospective clients, testing the product against those requirements, running demos, onboarding clients, and resolving issues as they surface. Currently validating product-market fit across three manufacturing domains — Pharma, FMCG, and Seafood — each with distinct supply chain constraints.</p>
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <span class="sp">AI-Enabled ERP</span>
             <span class="sp">Supply Chain</span>
@@ -678,7 +730,7 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
 
           <rect x="344" y="60" width="135" height="56" rx="8" fill="#eff2fd" stroke="#c7d0f8" stroke-width="1"/>
           <text x="411" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a3fa8">MPS Scheduling</text>
-          <text x="411" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">Scheduler fits here</text>
+          <text x="411" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">Master Scheduler</text>
 
           <rect x="494" y="60" width="135" height="56" rx="8" fill="#f0efe9" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
           <text x="561" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Manufacturing</text>
@@ -709,10 +761,10 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
           <line x1="329" y1="208" x2="344" y2="208" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
           <line x1="479" y1="208" x2="494" y2="208" stroke="#9a9a94" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
 
-          <text x="44" y="266" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">● Blue = where Scheduler operates today</text>
+          <text x="44" y="266" font-family="Inter,sans-serif" font-size="11" fill="#2d5be3">● Blue = where Master Scheduler operates today</text>
         </svg>
         <p style="font-size:12px;color:#6b6b6b;line-height:1.7;margin-top:0.75rem;">Same eight-stage flow across domains, different pressure points: <strong style="color:#3a3a3a;">Pharma</strong> at quality check (batch traceability, regulatory sign-off) · <strong style="color:#3a3a3a;">FMCG</strong> at manufacturing and warehousing (shelf-life, demand variability) · <strong style="color:#3a3a3a;">Seafood</strong> at distribution (cold chain, spoilage risk).</p>
-        <p style="font-size:12px;color:#6b6b6b;line-height:1.7;margin-top:0.5rem;">Scheduler's current scope covers demand/production planning, MPS scheduling, inventory tracking, and supplier SLAs — the mechanics (MTS vs MTO, reorder points and safety stock, lead time) are grounded in a CPD-certified course in Supply Chain Management and Capacity Planning, applied directly to how the product is built.</p>
+        <p style="font-size:12px;color:#6b6b6b;line-height:1.7;margin-top:0.5rem;">Master Scheduler's current scope covers demand/production planning, MPS scheduling, inventory tracking, and supplier SLAs — the mechanics (MTS vs MTO, reorder points and safety stock, lead time) are grounded in a CPD-certified course in Supply Chain Management and Capacity Planning, applied directly to how the product is built.</p>
       </div>
     </div>
   </div>
@@ -766,22 +818,22 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
     <div style="margin-top:2rem;">
       <div class="blog-card">
         <div class="blog-title">How I learned my product was solving the wrong problem</div>
-        <div class="blog-hook">We spent months building an energy-monitoring tool for a curd packaging line. The client's feedback told us we'd built the wrong thing entirely — and why that turned out to be a ₹2.8Cr/quarter lesson.</div>
+        <div class="blog-hook">We spent months building an energy-monitoring product. It worked. It just didn't scale — and figuring out why led to Factory Intelligence, and a ₹2.8Cr/quarter lesson.</div>
         <button class="blog-toggle" onclick="toggleBlog(this)">Read the full story ↓</button>
         <div class="blog-body">
           <h4>The idea we started with</h4>
-          <p>When we began working with Godrej Jersey on their curd packaging line, our first idea was straightforward: help the plant save money by monitoring energy consumption on every machine. It made intuitive sense — a manufacturing plant, machines running all day, energy costs add up. Track it, reduce it, save money.</p>
+          <p>Our first product idea was straightforward: help manufacturing plants save money by monitoring energy consumption on every machine. It made intuitive sense — machines running all day, energy costs add up. Track it, reduce it, save money.</p>
           <h4>Where it hit a wall</h4>
-          <p>We built toward that idea and started getting real feedback, and the feedback surprised us. Energy wasn't what the plant cared about most. In FMCG manufacturing, the real cost isn't the electricity bill — it's lost production capacity. Every hour a line isn't running at full efficiency is product that could have shipped and didn't. On top of that, properly monitoring energy would have meant a sensor on every single machine — a real hardware cost with no guaranteed fast payback. Customers weren't going to commit to that.</p>
-          <p>So we hit a wall: the product we'd started building wasn't solving the problem the customer actually had.</p>
+          <p>The problem wasn't that it didn't work. It was that it didn't scale as a product. Energy losses aren't a recurring problem — you fix the leak once, and it stays fixed. That makes for a good one-time consulting engagement, but a bad reason to keep paying for software: clients were asking "how much will you save me this year," a question with a hard ceiling. And for plants where energy was only 3-4% of monthly revenue burn, the entire use case wasn't important enough to prioritize, no matter how well the product worked.</p>
+          <p>So we hit a wall: we'd built something that worked, on a problem that didn't repeat, for customers who didn't feel it enough to keep caring.</p>
           <h4>How we worked through it</h4>
-          <p>We re-scoped the entire product around a different metric: OEE, or Overall Equipment Effectiveness — essentially a score for how well a machine or line is being used compared to its full potential. It needed far less hardware, tied directly to output rather than utility bills, and was the number the plant actually cared about.</p>
-          <p>We ran the redesigned product through a 6-8 month pilot to see how it performed with real data before assuming we understood the problem. That data pointed straight at one section of the line — packaging, almost always the tightest bottleneck in FMCG production — and showed that Availability (how often machines were actually running versus sitting idle) was the biggest opportunity.</p>
+          <p>Production and process optimization was the opposite kind of problem. There are dozens of recurring inefficiencies on any line, each one solvable, each one worth real ROI — and every time you fix one, the next bottleneck reveals itself. That's not a one-time fix, that's a product a plant keeps needing. We re-scoped the core of the product around OEE, or Overall Equipment Effectiveness — a score for how well a machine or line is being used against its full potential.</p>
+          <p>Importantly, we didn't throw away the energy-monitoring work. Some clients genuinely do have energy as a bottleneck, so we kept it as a module rather than a dead end, and combined both into one product: Factory Intelligence. We ran the re-scoped OEE side through a 6-8 month pilot to see how it performed with real data before assuming we understood the problem. That data pointed straight at one section of the line — packaging, almost always the tightest bottleneck in FMCG production — and showed that Availability (how often machines were actually running versus sitting idle) was the biggest opportunity.</p>
           <h4>The product, explained simply</h4>
-          <p>What we built tracks exactly when and why machines stop running, using a Pareto analysis to show which causes of downtime cost the most — in this case, overrunning cleaning cycles, meal breaks running long, and hot water processes taking longer than planned. It then automatically sends that information to the people who can act on it, over WhatsApp and email, with no dashboard login required.</p>
+          <p>Factory Intelligence tracks exactly when and why machines stop running, using a Pareto analysis to show which causes of downtime cost the most — in this case, overrunning cleaning cycles, meal breaks running long, and hot water processes taking longer than planned. It then automatically sends that information to the people who can act on it, over WhatsApp and email, with no dashboard login required. For clients where energy is the real constraint, that monitoring is still there too, as part of the same product.</p>
           <h4>The result</h4>
           <p>OEE on that line went from 44% to 85%. That's about ₹2.8 crore recovered per quarter — money that was being lost to invisible inefficiency, now visible and fixable.</p>
-          <div class="blog-lesson">The bigger lesson: this wasn't really a manufacturing story. Build around the metric your customer actually cares about, not the one that's easiest to measure. I've since noticed the same pattern elsewhere — chasing vanity metrics instead of real activation in a SaaS product, or optimizing for volume instead of margin in a marketplace.</div>
+          <div class="blog-lesson">The bigger lesson: this wasn't really a manufacturing story. A product needs a problem that keeps recurring, not just a problem you can solve well once. Build around the metric your customer will still care about next quarter, not just the one that's easiest to fix today.</div>
         </div>
       </div>
 
@@ -822,6 +874,23 @@ footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5re
           <h4>The result</h4>
           <p>Data entry time dropped 45%, data completeness went up 30%, and QA-flagged errors dropped about 80%. Adoption climbed after rollout, and operator complaints about the process dropped too — the format matched something they already trusted.</p>
           <div class="blog-lesson">Good design isn't always about building the more sophisticated option. Sometimes it's about noticing what your users already know how to do, and building toward that instead of away from it.</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-title">From MVP to Factory Intelligence — and what comes next</div>
+        <div class="blog-hook">The energy-vs-OEE pivot wasn't a single decision, it was the first of many. Here's how a one-metric MVP became a full platform, and why we're now building a second product one layer upstream of it.</div>
+        <button class="blog-toggle" onclick="toggleBlog(this)">Read the full story ↓</button>
+        <div class="blog-body">
+          <h4>Starting small, on purpose</h4>
+          <p>After the energy-to-OEE pivot, we didn't try to build the full platform in one go. We shipped an MVP focused on the core OEE and downtime tracking loop, got it into the market, and watched how real plants actually used it before deciding what to build next.</p>
+          <h4>Iterating in the open</h4>
+          <p>Once the MVP was live, improvements came from real usage, not guesswork: better downtime classification, then the bulk-assignment and timeline redesign work covered elsewhere on this page. Only after the core experience was solid did we start layering on new features rather than just polishing the existing ones. Stability came before scope.</p>
+          <h4>Where it stands now: Factory Intelligence</h4>
+          <p>What started as a single-metric energy tool is now Factory Intelligence — a stable platform covering OEE, downtime, and (for the clients who need it) the original energy-monitoring module, all in one product. It's the system of record for what's actually happening on the shop floor right now.</p>
+          <h4>What's next: Master Scheduler</h4>
+          <p>Factory Intelligence answers "what's happening on the floor right now." It doesn't answer "what should happen next." That's the gap Master Scheduler is built to close — an AI-enabled ERP for production scheduling and supply chain planning, sitting one layer upstream in the same value chain. It's currently in testing, validating fit across Pharma, FMCG, and Seafood manufacturing.</p>
+          <div class="blog-lesson">Products rarely arrive fully formed. The real skill is sequencing: get the core loop right, prove it holds up under real usage, then expand — and know when a genuinely new problem (like planning instead of monitoring) deserves a new product rather than another feature bolted onto the old one.</div>
         </div>
       </div>
     </div>
@@ -1024,9 +1093,9 @@ const RESPONSES = {
   certifications: `Three CPD certified courses from Alison:\n1. AI for Product Managers — LLM Evals, Generative AI, Prompt Engineering, RAG\n2. Agile Project Management — Scrum, Sprint Planning, Risk Management\n3. Supply Chain Management and Capacity Planning — MPS, MTS/MTO, Reorder Point, Lead Time (completed Aug 2026)`,
   supplychain: `Bharath is CPD-certified in Supply Chain Management and Capacity Planning (Alison), applied directly to building Scheduler: Master Production Scheduling (MPS), Make-to-Stock vs Make-to-Order strategy, Reorder Point and safety stock, lead time analysis, and supplier SLA management. This is applied product-side fluency built to design the right software for planners and plant teams — not years running warehouse operations.`,
   ai: `Bharath uses Claude (Anthropic) to generate shift summaries, classify downtime reasons, and create production narratives. He designs LLM eval criteria comparing AI output vs manually written ground truth.`,
-  current: `Bharath is working on Scheduler — an AI-enabled ERP platform for production scheduling and supply chain management. His role: gathering requirements from prospective clients, testing the product against them, running demos, onboarding clients, and resolving issues. Currently validating product-market fit across Pharma, FMCG, and Seafood manufacturing domains.`,
+  current: `Bharath is working on Master Scheduler — an AI-enabled ERP platform for production scheduling and supply chain management, sitting one layer upstream of Factory Intelligence in the same value chain. His role: gathering requirements from prospective clients, testing the product against them, running demos, onboarding clients, and resolving issues. Currently validating product-market fit across Pharma, FMCG, and Seafood manufacturing domains.`,
   background: `Bharath started in IoT testing and industrial automation at Nitro Network. He then moved into Product Management at Patternlab.agents in May 2024, where he's been ever since.`,
-  company: `Bharath is a Product Manager at Patternlab.agents — a B2B SaaS company building an enterprise workflow automation platform for plant managers and shop-floor operators to track OEE, downtime, and production data. He's been there since May 2024.`,
+  company: `Bharath is a Product Manager at Patternlab.agents — a B2B SaaS company building Factory Intelligence, a manufacturing operations platform for plant managers and shop-floor operators to track OEE, downtime, and production data. He's been there since May 2024.`,
   godrej: `The Godrej Jersey case study started as an energy-monitoring product, but Bharath pivoted it to OEE monitoring after client feedback showed production capacity mattered more than energy costs, and energy monitoring needed expensive per-machine hardware with uncertain ROI. After a 6-8 month demo, the data pointed to the packaging bottleneck and low Availability. Using lean manufacturing analysis and Pareto analysis, plus automated WhatsApp/email insight delivery to stakeholders, OEE improved from 44% to 85%, recovering ₹2.8Cr/quarter. Featured on Patternlab.ai LinkedIn.`,
   customersuccess: `Bharath's Customer Success work as Product Manager at Patternlab.agents:\n\n• 24+ enterprise implementations — avg go-live under 1 week\n• 50+ users onboarded via live sessions, videos & docs\n• 25+ product demos — 6 new customer conversions\n• 8+ manufacturing plants managed\n• 2–5 critical escalations resolved/month\n• Used Zipy & LogRocket for behavioral analytics\n• Voice of Customer in sprint reviews and roadmap discussions`,
   onboarding: `Bharath led end-to-end onboarding — kickoff meetings, credential provisioning, implementation planning, go-live coordination, and post-launch support — achieving avg go-live under 1 week across 24+ enterprise clients.`,
